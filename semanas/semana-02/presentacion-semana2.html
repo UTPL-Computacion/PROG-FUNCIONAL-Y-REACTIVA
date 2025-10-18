@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Semana 2 · Funciones y Expresiones Lambda</title>
+
+    <!-- Reveal.js core -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/theme/white.css" id="theme">
+
+    <!-- Syntax highlighting -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/highlight/monokai.css">
+
+    <!-- UTPL Theme -->
+    <link rel="stylesheet" href="../../assets/css/uide-theme.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <style>
+        .info-card {
+            background: rgba(0, 63, 114, 0.05);
+            border: 1px solid rgba(0, 63, 114, 0.18);
+            border-radius: 12px;
+            padding: 0.9em 1.1em;
+            margin-top: 0.6em;
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1em;
+        }
+
+        .concept-card {
+            background: white;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 63, 114, 0.12);
+            padding: 0.9em 1em;
+            box-shadow: 0 6px 18px rgba(0, 63, 114, 0.08);
+        }
+
+        .concept-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            margin: 0;
+            color: var(--uide-primary);
+        }
+
+        .highlight-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4em;
+            padding: 0.45em 0.85em;
+            border-radius: 999px;
+            background: rgba(233, 171, 33, 0.18);
+            color: var(--uide-primary);
+            font-weight: 600;
+        }
+
+        .side-by-side {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1em;
+            align-items: start;
+        }
+
+        .example-note {
+            margin-top: 0.6em;
+            font-size: 0.88em;
+            background: rgba(0, 63, 114, 0.06);
+            border-left: 3px solid var(--uide-primary);
+            padding: 0.55em 0.75em;
+            border-radius: 7px;
+        }
+
+        .glossary {
+            margin-top: 0.6em;
+            font-size: 0.86em;
+            background: rgba(0, 63, 114, 0.05);
+            border-left: 3px solid rgba(0, 63, 114, 0.4);
+            padding: 0.55em 0.75em;
+            border-radius: 7px;
+        }
+
+        .download-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45em;
+            padding: 0.45em 0.9em;
+            background: var(--uide-primary);
+            color: #fff;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 0.7em;
+        }
+
+        .download-link:hover {
+            background: var(--uide-secondary);
+        }
+
+        .qr-wrapper {
+            margin-top: 0.8em;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.35em;
+            background: rgba(0, 63, 114, 0.04);
+            padding: 0.65em;
+            border-radius: 9px;
+            border: 1px solid rgba(0, 63, 114, 0.12);
+        }
+
+        .qr-wrapper img {
+            width: 130px;
+            height: 130px;
+        }
+
+        @media (max-width: 1024px) {
+            .concept-grid,
+            .side-by-side {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .reveal section {
+            max-width: 900px;
+            margin: 0 auto !important;
+        }
+
+        @media (max-width: 1180px) {
+            .reveal section {
+                max-width: 85vw;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .reveal .slides {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- Portada -->
+            <section data-background="rgba(0, 63, 114, 0.03)" data-transition="convex">
+                <h1>Funciones y Expresiones Lambda</h1>
+                <div class="highlight-badge">
+                    Semana 2 · Programación Funcional
+                </div>
+                <div class="info-card">
+                    <strong>Objetivo:</strong> Relacionar la noción matemática de función con su uso en
+                    programación, distinguir funciones puras e impuras y practicar expresiones lambda.
+                </div>
+                <p style="margin-top: 1em; font-size: 0.9em;">
+                    Universidad Técnica Particular de Loja · Prof. Charlie Cárdenas Toledo, M.Sc.
+                </p>
+            </section>
+
+            <!-- Agenda -->
+            <section>
+                <h2>Agenda</h2>
+                <ol>
+                    <li>Funciones en programación vs. matemáticas.</li>
+                    <li>Funcionamiento y beneficios de las funciones puras.</li>
+                    <li>Primeros pasos en programación funcional.</li>
+                    <li>Ejercicios: recursión, refactorización y lambdas.</li>
+                </ol>
+                <div class="example-note">
+                    Mantendremos el foco en evitar efectos secundarios y en describir resultados, no pasos.
+                </div>
+            </section>
+
+            <!-- Funciones -->
+            <section>
+                <h2>1. Funciones en programación</h2>
+                <div class="concept-grid">
+                    <div class="concept-card">
+                        <h3><i class="fa-solid fa-dna"></i> Definición</h3>
+                        <p>Bloques reutilizables que encapsulan lógica. Pueden provenir del lenguaje,
+                            bibliotecas o ser creadas por la persona que programa.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3><i class="fa-solid fa-code"></i> Sintaxis (Python)</h3>
+<pre><code class="language-python">def saludar(nombre):
+    return f"Hola {nombre}"</code></pre>
+                        <p>Uso: <code>saludar("Ana")</code>. La palabra clave <code>return</code> entrega
+                            resultados.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3><i class="fa-solid fa-diagram-project"></i> Efectos</h3>
+                        <p>A diferencia de las funciones matemáticas, pueden producir efectos como imprimir,
+                            escribir archivos o cambiar variables externas.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Funciones vs métodos -->
+            <section>
+                <h2>Función vs. método</h2>
+                <div class="side-by-side">
+                    <div class="concept-card">
+                        <h3><i class="fa-solid fa-cube"></i> Función</h3>
+                        <ul>
+                            <li>Independiente del estado de un objeto.</li>
+                            <li>Se invoca como <code>resultado = funcion(arg)</code>.</li>
+                            <li>No requiere parámetro <code>self</code>.</li>
+                        </ul>
+                    </div>
+                    <div class="concept-card">
+                        <h3><i class="fa-solid fa-cubes"></i> Método</h3>
+                        <ul>
+                            <li>Asociado a datos/objetos concretos.</li>
+                            <li>Se invoca como <code>dato.metodo(arg)</code>.</li>
+                            <li>Recibe <code>self</code> para acceder al estado.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="example-note">
+                    En PF buscamos funciones desacopladas del estado para facilitar pruebas y reutilización.
+                </div>
+            </section>
+
+            <!-- Funciones puras -->
+            <section>
+                <h2>2. Funciones puras</h2>
+                <div class="concept-grid">
+                    <div class="concept-card">
+                        <h3><i class="fa-solid fa-bullseye"></i> Determinismo</h3>
+                        <p>Iguales entradas, iguales salidas. Facilita depuración y pruebas.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3><i class="fa-solid fa-ban"></i> Sin efectos secundarios</h3>
+                        <p>No modifica datos externos ni depende de ellos. Trabaja con parámetros y valores
+                            retornados.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3><i class="fa-solid fa-layer-group"></i> Composición</h3>
+                        <p>Funciona como bloques LEGO: se pueden encadenar para producir transformaciones
+                            complejas.</p>
+                    </div>
+                </div>
+                <div class="example-note">
+                    Relación directa con la inmutabilidad: se evitan datos cambiantes para mantener la pureza.
+                </div>
+            </section>
+
+            <!-- Primeros pasos PF -->
+            <section>
+                <h2>3. Primeros pasos en PF</h2>
+                <div class="concept-grid">
+                    <div class="concept-card">
+                        <h3><i class="fa-solid fa-person-walking"></i> Ciudadanas de primera clase</h3>
+                        <p>Las funciones se almacenan en variables, se envían como argumentos y se retornan.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3><i class="fa-solid fa-repeat"></i> Recursión</h3>
+<pre><code class="language-fsharp">let rec fib n =
+    if n < 2 then 1
+    else fib (n-1) + fib (n-2)</code></pre>
+                    </div>
+                    <div class="concept-card">
+                        <h3><i class="fa-solid fa-link"></i> Currificación</h3>
+<pre><code class="language-javascript">const sumar = (a) => (b) => a + b;
+const sumarTres = sumar(3);</code></pre>
+                        <p>Permite crear funciones especializadas al parcializar argumentos.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Ejercicios -->
+            <section>
+                <h2>4. Ejercicios guiados</h2>
+                <div class="side-by-side">
+                    <div>
+                        <h3>Refactorizar suma de pares</h3>
+                        <ol>
+                            <li>Analiza la versión imperativa con bucles y estados mutables.</li>
+                            <li>Identifica patrones de filtrado y acumulación.</li>
+                            <li>Cámbialos por <code>filter</code> y <code>reduce</code> (o
+                                <code>foldl</code> en Haskell).</li>
+                        </ol>
+                    </div>
+                    <div>
+                        <h3>Lambdas con <code>map</code></h3>
+                        <p>Construye una lista de potencias: <code>map(lambda x: 2 ** x, lista)</code>.</p>
+                        <p>Experimenta con normalizar cadenas: <code>lambda texto: texto.strip().title()</code>.</p>
+                    </div>
+                </div>
+                <div class="example-note">
+                    Documenta las decisiones: ¿cuándo aceptas un efecto secundario? ¿cómo aislas la mutación?
+                </div>
+            </section>
+
+            <!-- Recursos -->
+            <section>
+                <h2>Recursos sugeridos</h2>
+                <div class="concept-grid">
+                    <div class="concept-card">
+                        <h3><i class="fa-solid fa-book"></i> Lecturas</h3>
+                        <ul>
+                            <li>Kereki, F. – El discreto encanto de la PF.</li>
+                            <li>Kariuki, C. – Funciones puras en 5 minutos.</li>
+                            <li>Universidad de Sevilla – Tema 1: Declarativa y funcional.</li>
+                        </ul>
+                    </div>
+                    <div class="concept-card">
+                        <h3><i class="fa-solid fa-desktop"></i> Prácticas</h3>
+                        <ul>
+                            <li>Refactoriza funciones impuras para aislar efectos.</li>
+                            <li>Implementa <code>map</code>, <code>filter</code>, <code>reduce</code> desde cero.</li>
+                            <li>Explora F#, Haskell o Clojure para enriquecer tu perspectiva.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cierre -->
+            <section data-transition="convex">
+                <h2>Siguientes pasos</h2>
+                <ul>
+                    <li>Practica funciones puras y lambdas en pequeños scripts.</li>
+                    <li>Investiga cómo manejar efectos secundarios con funciones envolventes.</li>
+                    <li>Prepara preguntas sobre clausuras y callbacks para la próxima semana.</li>
+                </ul>
+                <div class="glossary">
+                    <strong>Próxima sesión:</strong> clausuras, funciones de orden superior aplicadas y composición.
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            plugins: [RevealHighlight]
+        });
+    </script>
+</body>
+
+</html>

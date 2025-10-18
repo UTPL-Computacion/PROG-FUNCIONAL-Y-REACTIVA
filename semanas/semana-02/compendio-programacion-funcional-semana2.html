@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Semana 2 - Funciones y Expresiones Lambda</title>
+
+    <!-- Reveal.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/theme/white.css" id="theme">
+
+    <!-- Syntax highlighting -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/highlight/monokai.css">
+
+    <!-- UIDE Theme CSS -->
+    <link rel="stylesheet" href="../../assets/css/uide-theme.css">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <style>
+        .title-slide h1 {
+            margin-bottom: 0.4em;
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .concept-card {
+            background: rgba(0, 63, 114, 0.05);
+            border: 1px solid rgba(0, 63, 114, 0.18);
+            border-radius: 10px;
+            padding: 1rem 1.2rem;
+            text-align: left;
+        }
+
+        .concept-card h4 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0 0 0.6rem;
+            color: var(--uide-primary);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9em;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            border: 1px solid rgba(0, 63, 114, 0.2);
+            padding: 0.6em 0.9em;
+            vertical-align: top;
+        }
+
+        .comparison-table th {
+            background: rgba(0, 63, 114, 0.08);
+        }
+
+        .code-card {
+            background: rgba(233, 171, 33, 0.12);
+            border-left: 4px solid rgba(233, 171, 33, 0.9);
+            padding: 0.9rem 1.1rem;
+            border-radius: 9px;
+            margin-top: 0.8rem;
+            font-size: 0.9em;
+        }
+
+        .quote-box {
+            background: rgba(0, 63, 114, 0.05);
+            border-left: 3px solid var(--uide-primary);
+            padding: 0.9rem 1.1rem;
+            border-radius: 9px;
+            font-style: italic;
+        }
+
+        @media (max-width: 900px) {
+            .concept-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- Title Slide -->
+            <section data-background-color="#f8f8f8" data-transition="convex">
+                <div class="title-slide">
+                    <h1>Funciones y Expresiones Lambda</h1>
+                    <h2>Semana 2</h2>
+
+                    <div class="course-info">
+                        <strong>Programación Funcional</strong><br>
+                        <em>Prof. Charlie Cárdenas Toledo, M.Sc.</em><br>
+                        Universidad Técnica Particular de Loja • 2025
+                    </div>
+
+                    <div
+                        style="background: rgba(0, 63, 114, 0.08); border-radius: 10px; padding: 1em; margin: 1em 0; font-size: 0.95em;">
+                        <strong>Enfoque:</strong> Funciones puras, expresiones lambda y primeros pasos prácticos
+                        en programación funcional.
+                    </div>
+
+                    <div style="margin-top: 1.6em; font-size: 0.95em; color: var(--uide-secondary);">
+                        Ciudadanía de primera clase, inmutabilidad y recursión aplicada
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contexto y Motivación -->
+            <section data-background-color="#f8f8f8">
+                <h2>¿Por qué estudiar funciones?</h2>
+                <div class="concept-grid">
+                    <div class="concept-card">
+                        <h4><i class="fa-solid fa-calculator"></i> De la matemática al código</h4>
+                        <p>Las funciones matemáticas establecen una relación determinista entre entrada y salida.
+                            La programación funcional replica esta idea para lograr sistemas previsibles.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h4><i class="fa-solid fa-code-branch"></i> Modulización</h4>
+                        <p>Separar lógica en funciones puras facilita pruebas, refactorización y
+                            composición. El código se vuelve una colección de transformaciones.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h4><i class="fa-solid fa-people-group"></i> Trabajo colaborativo</h4>
+                        <p>Funciones sin efectos secundarios evitan sorpresas en equipo y preparan la base
+                            para flujos concurrentes seguros.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Funciones matemáticas vs programación -->
+            <section>
+                <h2>Funciones matemáticas vs. funciones en código</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem;">
+                    <div class="quote-box">
+                        <p>“Una función es capaz de generar efectos —escribir un archivo, dibujar una
+                            imagen— algo inaudito en el mundo matemático.”</p>
+                        <small>Reddit, r/learnmath</small>
+                    </div>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Función (estilo matemático)</th>
+                                <th>Función (en programación imperativa)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Depende exclusivamente de sus variables de entrada.</td>
+                                <td>Puede depender de estado global o mutar parámetros.</td>
+                            </tr>
+                            <tr>
+                                <td>Dominios y codominios definidos e inmutables.</td>
+                                <td>Limitada por la arquitectura (precisión, memoria).</td>
+                            </tr>
+                            <tr>
+                                <td>No produce efectos secundarios.</td>
+                                <td>Puede generar efectos: E/S, mutaciones, llamadas a red.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Funciones puras -->
+            <section>
+                <h2>Funciones puras</h2>
+                <div class="concept-grid">
+                    <div class="concept-card">
+                        <h4><i class="fa-solid fa-gem"></i> Determinismo</h4>
+                        <p>Mismos argumentos, mismo resultado. Facilita reproducibilidad y pruebas unitarias.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h4><i class="fa-solid fa-shield-heart"></i> Sin efectos secundarios</h4>
+                        <p>No modifica bases de datos, archivos ni variables externas. Trabaja con datos
+                            inmutables.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h4><i class="fa-solid fa-wave-square"></i> Combinabilidad</h4>
+                        <p>Componer funciones puras produce pipelines declarativos y fáciles de razonar.</p>
+                    </div>
+                </div>
+
+                <div class="code-card">
+<pre><code class="language-javascript">// Función pura
+const descuento = (precio, porcentaje) => precio * (1 - porcentaje);
+
+// Función impura
+let total = 0;
+const agregarAlCarrito = (precio) => {
+  total += precio; // muta un estado externo
+  return total;
+};</code></pre>
+                </div>
+            </section>
+
+            <!-- Ciudadanía de primera clase -->
+            <section>
+                <h2>Funciones como ciudadanas de primera clase</h2>
+                <section>
+                    <h3>Propiedades esenciales</h3>
+                    <ul>
+                        <li>Pueden almacenarse en variables y estructuras de datos.</li>
+                        <li>Se envían como argumentos o se retornan desde otras funciones.</li>
+                        <li>Convierten a las funciones de orden superior en patrones naturales.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Conceptos clave para avanzar</h3>
+                    <div class="concept-grid">
+                        <div class="concept-card">
+                            <h4><i class="fa-solid fa-layer-group"></i> Orden superior</h4>
+                            <p><code>map</code>, <code>filter</code>, <code>reduce</code> abstraen patrones
+                                de iteración y delegan decisiones en lambdas.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h4><i class="fa-solid fa-arrows-turn-right"></i> Currificación</h4>
+                            <p>Transforma funciones de múltiples parámetros en una cascada de funciones de un
+                                solo parámetro.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h4><i class="fa-solid fa-retweet"></i> Recursión</h4>
+                            <p>Reemplaza bucles mutables con llamadas sucesivas hasta alcanzar un caso base.</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Ejemplo: suma de pares -->
+            <section data-transition="fade">
+                <h2>Refactorización: sumar pares</h2>
+                <div class="concept-grid">
+                    <div class="concept-card">
+                        <h4><i class="fa-solid fa-code"></i> Imperativo</h4>
+<pre><code class="language-javascript">function sumarParesImperativo(lista) {
+  let total = 0;
+  for (let i = 0; i < lista.length; i++) {
+    if (lista[i] % 2 === 0) {
+      total += lista[i];
+    }
+  }
+  return total;
+}</code></pre>
+                    </div>
+                    <div class="concept-card">
+                        <h4><i class="fa-solid fa-infinity"></i> Declarativo / funcional</h4>
+<pre><code class="language-javascript">const sumarParesFuncional = (lista) =>
+  lista
+    .filter((n) => n % 2 === 0)
+    .reduce((acc, n) => acc + n, 0);</code></pre>
+                        <p>Patrones repetibles se encapsulan en funciones de orden superior.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recursión -->
+            <section>
+                <h2>Recursión controlada</h2>
+                <p>La recursión reemplaza bucles mutables y se basa en un caso base que corta la ejecución.
+                    Útil para estructuras como árboles o listas inmutables.</p>
+                <div class="code-card">
+<pre><code class="language-javascript">// Fibonacci recursivo (didáctico)
+const fib = (n) => (n < 2 ? 1 : fib(n - 1) + fib(n - 2));
+
+// Con memoización para entornos reales
+const fibMemo = ((cache = {}) => (n) => {
+  if (n in cache) return cache[n];
+  cache[n] = n < 2 ? 1 : fibMemo(n - 1) + fibMemo(n - 2);
+  return cache[n];
+})();</code></pre>
+                </div>
+                <p class="fragment">Controla el crecimiento de la pila con casos base claros y, cuando sea
+                    necesario, optimiza con memoización o versiones de cola.</p>
+            </section>
+
+            <!-- Expresiones lambda -->
+            <section>
+                <h2>Expresiones lambda</h2>
+                <p>Las lambdas encapsulan transformaciones puntuales. Son esenciales en pipelines funcionales.</p>
+                <div class="concept-grid">
+                    <div class="concept-card">
+                        <h4><i class="fa-solid fa-bolt"></i> Transformaciones rápidas</h4>
+<pre><code class="language-javascript">const potenciasDeDos = Array.from({ length: 5 }, (_, x) => 2 ** x);
+console.log(potenciasDeDos); // [1, 2, 4, 8, 16]</code></pre>
+                    </div>
+                    <div class="concept-card">
+                        <h4><i class="fa-solid fa-diagram-project"></i> Composición</h4>
+<pre><code class="language-javascript">const normalizar = (texto) => texto.trim().toLowerCase();
+const capitalizar = (texto) => texto[0].toUpperCase() + texto.slice(1);
+
+const limpiarNombre = (nombre) => capitalizar(normalizar(nombre));
+console.log(limpiarNombre("  lambda lovers "));</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Ejemplos prácticos -->
+            <section>
+                <h2>Ejemplos prácticos</h2>
+                <section>
+                    <h3>Pipelines declarativos</h3>
+                    <p>Modela transformaciones puras encadenando <code>filter</code>, <code>map</code> y
+                        <code>reduce</code>.</p>
+                    <div class="code-card">
+<pre><code class="language-javascript">const ventas = [
+  { vendedor: "Ana", total: 1200, estado: "cerrado" },
+  { vendedor: "Luis", total: 400, estado: "abierto" },
+  { vendedor: "Ana", total: 800, estado: "cerrado" },
+  { vendedor: "María", total: 600, estado: "cerrado" }
+];
+
+const totalCerradoPorVendedor = (nombre) =>
+  ventas
+    .filter((venta) => venta.estado === "cerrado" && venta.vendedor === nombre)
+    .map((venta) => venta.total)
+    .reduce((acc, total) => acc + total, 0);
+
+console.log(totalCerradoPorVendedor("Ana")); // 2000</code></pre>
+                    </div>
+                    <p>La estructura facilita agregar reglas, por ejemplo, transformar totales con impuestos o
+                        descuentos sin mutar datos.</p>
+                </section>
+
+                <section>
+                    <h3>Funciones vs. métodos en práctica</h3>
+                    <p>Encapsula lógica en funciones puras y deja los métodos como envoltorios que delegan
+                        responsabilidades.</p>
+                    <div class="code-card">
+<pre><code class="language-javascript">const calcularPuntaje = ({ aciertos, errores }) => aciertos * 3 - errores;
+
+const estudiante = {
+  nombre: "Sofía",
+  aciertos: 18,
+  errores: 2,
+  puntaje() {
+    return calcularPuntaje(this);
+  }
+};
+
+console.log(calcularPuntaje({ aciertos: 20, errores: 1 })); // 59
+console.log(estudiante.puntaje()); // 52</code></pre>
+                    </div>
+                    <p>Distinguir la función pura de la interfaz orientada a objetos facilita pruebas aisladas y
+                        reutilización en otros contextos.</p>
+                </section>
+
+                <section>
+                    <h3>Currificación y composición</h3>
+                    <p>Especializa funciones aplicando argumentos parciales y combínalas para generar pipelines
+                        expresivos.</p>
+                    <div class="code-card">
+<pre><code class="language-javascript">const aplicar = (fn) => (valor) => fn(valor);
+const multiplicar = (factor) => (valor) => valor * factor;
+const sumar = (incremento) => (valor) => valor + incremento;
+
+const duplicar = multiplicar(2);
+const incrementarCinco = sumar(5);
+
+const transformar = (valor) => aplicar(incrementarCinco)(duplicar(valor));
+
+console.log(transformar(10)); // 25</code></pre>
+                    </div>
+                    <p>Este patrón prepara la base para librerías de composición más avanzadas (p. ej. Ramda,
+                        lodash/fp) y refuerza la idea de funciones como piezas intercambiables.</p>
+                </section>
+            </section>
+
+            <!-- Cierre -->
+            <section data-transition="convex">
+                <h2>Checklist de la semana</h2>
+                <ul>
+                    <li><strong>Comprende</strong> qué hace pura a una función y por qué importa.</li>
+                    <li><strong>Practica</strong> map/filter/reduce con lambdas para modelar pipelines.</li>
+                    <li><strong>Explora</strong> recursión y currificación como herramientas declarativas.</li>
+                    <li><strong>Reflexiona</strong> sobre cuándo son inevitables los efectos secundarios
+                        (I/O) y cómo aislarlos.</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            plugins: [RevealHighlight]
+        });
+    </script>
+</body>
+
+</html>
