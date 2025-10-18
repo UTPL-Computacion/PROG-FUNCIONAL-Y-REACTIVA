@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programación Funcional - Compendios Semanales</title>
+    <!-- UTPL Theme CSS -->
+    <link rel="stylesheet" href="assets/css/uide-theme.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="assets/images/Logo UIDE.png" alt="Logo UIDE" style="max-width: 150px; margin-bottom: 20px;">
+            <h1>Programación Funcional</h1>
+            <p>Compendios Semanales del Curso</p>
+            <div style="margin-top: 1em; padding: 1em; background: rgba(255,255,255,0.7); border-radius: 8px; font-size: 0.9em;">
+                <strong>Programación Funcional</strong> • Pregrado • Universidad Técnica Particular de Loja<br>
+                <strong>Paradigmas:</strong> Imperativo, Declarativo, Funcional<br>
+                <em>Prof. Charlie Cárdenas Toledo, M.Sc.</em>
+            </div>
+        </div>
+
+        <!-- Course Information Section -->
+        <div class="toc-section" style="background: rgba(0, 63, 114, 0.08); border-radius: 12px; padding: 2em; margin-bottom: 2em;">
+            <h2 style="color: var(--uide-primary); margin-bottom: 0.5em;">
+                <i class="fa-solid fa-clipboard-list icon-heading" aria-hidden="true"></i>
+                Información del Curso
+            </h2>
+            <p class="toc-subtitle" style="margin-bottom: 1.5em;">Fundamentos de programación funcional y paradigmas</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5em;">
+                <div style="background: white; padding: 1.5em; border-radius: 8px; border-left: 4px solid var(--uide-primary);">
+                    <h3 style="margin: 0 0 1em 0; color: var(--uide-primary);">
+                        <i class="fa-solid fa-bullseye icon-heading" aria-hidden="true"></i>
+                        Objetivos
+                    </h3>
+                    <p style="margin: 0.5em 0;"><strong>Paradigmas:</strong> Imperativo vs Declarativo</p>
+                    <p style="margin: 0.5em 0;"><strong>Funciones:</strong> Puras, de orden superior</p>
+                    <p style="margin: 0.5em 0;"><strong>Inmutabilidad:</strong> Datos inmutables</p>
+                </div>
+                
+                <div style="background: white; padding: 1.5em; border-radius: 8px; border-left: 4px solid var(--uide-secondary);">
+                    <h3 style="margin: 0 0 1em 0; color: var(--uide-secondary);">
+                        <i class="fa-solid fa-book icon-heading" aria-hidden="true"></i>
+                        Lenguajes
+                    </h3>
+                    <p style="margin: 0.5em 0;"><strong>Puros:</strong> Haskell, Miranda</p>
+                    <p style="margin: 0.5em 0;"><strong>Impuros:</strong> Scala, Python, Java 8+, JavaScript</p>
+                    <p style="margin: 0.5em 0;"><strong>Históricos:</strong> LISP, ML, Erlang</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course Table of Contents -->
+        <div class="toc-section">
+            <h2>Compendios Semanales</h2>
+            <p class="toc-subtitle">Contenidos organizados cronológicamente por semanas</p>
+        </div>
+
+        <div class="weeks-grid">
+            <!-- Unidad 1: Fundamentos de Programación Funcional -->
+            <div class="week-card week-card--active">
+                <div class="week-number">Semana 01</div>
+                <div class="week-title">Paradigmas de Programación</div>
+                <div class="week-description"><strong>Fundamentos:</strong> Paradigmas imperativo vs declarativo, historia de la programación funcional (cálculo lambda, LISP), características clave (inmutabilidad, funciones puras), lenguajes funcionales puros e impuros</div>
+                <div class="week-links">
+                    <a href="semanas/semana-01/compendio-programacion-funcional-semana1.html" class="link-btn link-html">
+                        <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+                        Ver compendio
+                    </a>
+                    <a href="semanas/semana-01/presentacion-semana1.html" class="link-btn link-slides">
+                        <i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i>
+                        Ver presentación
+                    </a>
+                </div>
+            </div>
+
+            <div class="week-card" style="opacity: 0.4; border-left-color: #ccc;">
+                <div class="week-number">Semana 02</div>
+                <div class="week-title">Funciones y Expresiones Lambda</div>
+                <div class="week-description"><strong>Funciones:</strong> Funciones de primera clase, funciones de orden superior, expresiones lambda, composición de funciones, aplicación parcial y currying</div>
+            </div>
+
+            <div class="week-card" style="opacity: 0.4; border-left-color: #ccc;">
+                <div class="week-number">Semana 03</div>
+                <div class="week-title">Recursividad y Listas</div>
+                <div class="week-description"><strong>Estructuras:</strong> Recursión como alternativa a iteración, listas inmutables, operaciones sobre listas (map, filter, reduce), patrones de recursión</div>
+            </div>
+
+            <div class="week-card" style="opacity: 0.4; border-left-color: #ccc;">
+                <div class="week-number">Semana 04</div>
+                <div class="week-title">Tipos de Datos y Pattern Matching</div>
+                <div class="week-description"><strong>Tipos:</strong> Tipos de datos algebraicos, tipos sum y product, pattern matching, tipos paramétricos y polimorfismo</div>
+            </div>
+
+            <div class="week-card" style="border-left-color: var(--university-accent);">
+                <div class="week-number">Semana 05</div>
+                <div class="week-title">Evaluación Diagnóstica</div>
+                <div class="week-description">Evaluación de conceptos fundamentales de Ingeniería del Software, requerimientos y metodologías ágiles</div>
+            </div>
+
+            <!-- Unidad 2: Diseño y Arquitectura -->
+            <div class="week-card" style="opacity: 0.4; border-left-color: #ccc;">
+                <div class="week-number">Semana 06</div>
+                <div class="week-title">Diseño de Arquitectura</div>
+                <div class="week-description"><strong>Unidad 2:</strong> DDD ligero, ADRs, monolito modular vs microservicios; contratos y compatibilidad</div>
+            </div>
+
+            <div class="week-card" style="opacity: 0.4; border-left-color: #ccc;">
+                <div class="week-number">Semana 07</div>
+                <div class="week-title">Modelado UML</div>
+                <div class="week-description"><strong>Unidad 2:</strong> Casos de uso, modelo de contexto, diagramas de clases para el dominio</div>
+            </div>
+
+            <div class="week-card" style="opacity: 0.4; border-left-color: #ccc;">
+                <div class="week-number">Semana 08</div>
+                <div class="week-title">Diagramas de Interacción y Despliegue</div>
+                <div class="week-description"><strong>Unidad 2:</strong> Secuencia/actividad (escenarios clave), componentes y despliegue orientado a cloud</div>
+            </div>
+
+            <!-- Unidad 3: DevOps y Automatización -->
+            <div class="week-card" style="opacity: 0.4; border-left-color: #ccc;">
+                <div class="week-number">Semana 09</div>
+                <div class="week-title">Git Avanzado y Platform Engineering</div>
+                <div class="week-description"><strong>Unidad 3:</strong> Git avanzado (ramas cortas, PRs, code review), Platform Engineering / IDP y automatización básica</div>
+            </div>
+
+            <div class="week-card" style="border-left-color: #28a745;">
+                <div class="week-number">Semana 10</div>
+                <div class="week-title">Evaluación Formativa</div>
+                <div class="week-description">Evaluación práctica de diseño, arquitectura y herramientas de desarrollo</div>
+            </div>
+
+            <div class="week-card" style="opacity: 0.4; border-left-color: #ccc;">
+                <div class="week-number">Semana 11</div>
+                <div class="week-title">CI/CD y Seguridad</div>
+                <div class="week-description"><strong>Unidad 3:</strong> CI/CD moderno (pipelines como código, artefactos, feature flags), seguridad: SAST/DAST/SCA, SBOM, firma, supply chain (SLSA)</div>
+            </div>
+
+            <div class="week-card" style="opacity: 0.4; border-left-color: #ccc;">
+                <div class="week-number">Semana 12</div>
+                <div class="week-title">Contenedores y Observabilidad</div>
+                <div class="week-description"><strong>Unidad 3:</strong> Contenedores, Docker, Kubernetes/GitOps (visión práctica), observabilidad: logs, métricas, trazas (OpenTelemetry), SLO/SLA</div>
+            </div>
+
+            <!-- Unidad 4: Calidad y Mantenimiento -->
+            <div class="week-card" style="opacity: 0.4; border-left-color: #ccc;">
+                <div class="week-number">Semana 13</div>
+                <div class="week-title">Testing y TDD</div>
+                <div class="week-description"><strong>Unidad 4:</strong> Pirámide de pruebas, contratos, mutación y desempeño, TDD/ATDD en el proyecto</div>
+            </div>
+
+            <div class="week-card" style="opacity: 0.4; border-left-color: #ccc;">
+                <div class="week-number">Semana 14</div>
+                <div class="week-title">IA en Desarrollo de Software</div>
+                <div class="week-description"><strong>Unidad 4:</strong> Asistentes de código, generación de tests y refactor asistido, riesgos (licencias/datos) y verificación humana</div>
+            </div>
+
+            <div class="week-card" style="opacity: 0.4; border-left-color: #ccc;">
+                <div class="week-number">Semana 15</div>
+                <div class="week-title">Mantenimiento y Legacy</div>
+                <div class="week-description"><strong>Unidad 4:</strong> Mantenimiento, legacy y patrón estrangulador, migraciones, FinOps básico y monitoreo/alertas</div>
+            </div>
+
+            <div class="week-card" style="border-left-color: #dc3545;">
+                <div class="week-number">Semana 16</div>
+                <div class="week-title">Evaluación Sumativa</div>
+                <div class="week-description">Evaluación final integral de todos los conceptos y prácticas de Ingeniería del Software</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 - Curso Programación Funcional - Universidad Técnica Particular de Loja</p>
+            <p style="margin-top: 0.5em; font-size: 0.9em; opacity: 0.8;">
+                Paradigmas: Imperativo, Declarativo, Funcional<br>
+                <strong>chcardenasto@utpl.edu.ec</strong>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>

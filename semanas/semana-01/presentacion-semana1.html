@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Semana 1 · Paradigmas de Programación</title>
+
+    <!-- Reveal.js core -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/theme/white.css" id="theme">
+
+    <!-- Syntax highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/highlight/monokai.css">
+
+    <!-- UTPL Theme -->
+    <link rel="stylesheet" href="../../assets/css/uide-theme.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <style>
+        .info-card {
+            background: rgba(0, 63, 114, 0.05);
+            border: 1px solid rgba(0, 63, 114, 0.16);
+            border-radius: 12px;
+            padding: 0.85em 1em;
+            margin-top: 0.6em;
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1em;
+        }
+
+        .concept-card {
+            background: white;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 63, 114, 0.1);
+            padding: 0.9em 1em;
+            box-shadow: 0 6px 16px rgba(0, 63, 114, 0.06);
+        }
+
+        .concept-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            margin-top: 0;
+            color: var(--uide-primary);
+        }
+
+        .highlight-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4em;
+            padding: 0.4em 0.8em;
+            border-radius: 999px;
+            background: rgba(234, 160, 1, 0.18);
+            color: var(--uide-primary);
+            font-weight: 600;
+        }
+
+        .side-by-side {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1em;
+            align-items: start;
+        }
+
+        .example-note {
+            margin-top: 0.6em;
+            font-size: 0.9em;
+            background: rgba(0, 63, 114, 0.06);
+            border-left: 3px solid var(--uide-primary);
+            padding: 0.5em 0.7em;
+            border-radius: 7px;
+        }
+
+        .glossary {
+            margin-top: 0.6em;
+            font-size: 0.85em;
+            background: rgba(0, 63, 114, 0.05);
+            border-left: 3px solid rgba(0, 63, 114, 0.4);
+            padding: 0.55em 0.75em;
+            border-radius: 7px;
+        }
+
+        .glossary ul {
+            margin: 0.4em 0 0;
+            padding-left: 1.2em;
+        }
+
+        .analogy {
+            display: block;
+            margin-bottom: 0.6em;
+            font-style: italic;
+            color: rgba(0, 63, 114, 0.9);
+        }
+
+        .download-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4em;
+            padding: 0.45em 0.85em;
+            background: var(--uide-primary);
+            color: #fff;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 0.6em;
+        }
+
+        .download-link:hover {
+            background: var(--uide-secondary);
+        }
+
+        .qr-wrapper {
+            margin-top: 0.8em;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.35em;
+            background: rgba(0, 63, 114, 0.04);
+            padding: 0.65em;
+            border-radius: 9px;
+            border: 1px solid rgba(0, 63, 114, 0.1);
+        }
+
+        .qr-wrapper img {
+            width: 130px;
+            height: 130px;
+        }
+
+        .qr-wrapper span {
+            font-size: 0.85em;
+            color: rgba(0, 63, 114, 0.9);
+        }
+
+        @media (max-width: 1024px) {
+            .concept-grid,
+            .side-by-side {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .reveal section {
+            max-width: 900px;
+            margin: 0 auto !important;
+        }
+
+        @media (max-width: 1180px) {
+            .reveal section {
+                max-width: 85vw;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .reveal section {
+                max-width: 92vw;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .info-card {
+                padding: 1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <section data-background-color="#f8f8f8" data-transition="convex">
+                <section>
+                    <div class="title-slide">
+                        <h1>Paradigmas de Programación</h1>
+                        <h2>Semana 1</h2>
+                        <div class="course-info">
+                            <strong>Programación Funcional</strong><br>
+                            Universidad Técnica Particular de Loja · 2025<br>
+                            Docente: Charlie Cárdenas Toledo, M.Sc.
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h2><i class="fa-solid fa-bullseye icon-heading" aria-hidden="true"></i> Objetivos de aprendizaje</h2>
+                    <div class="info-card">
+                        <ul>
+                            <li>Diferenciar los paradigmas imperativo, declarativo y funcional.</li>
+                            <li>Reconocer los principios clave de la programación funcional.</li>
+                            <li>Aplicar funciones puras sobre datos mediante ejemplos sencillos.</li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h2><i class="fa-solid fa-download icon-heading" aria-hidden="true"></i> Preparación: instalar Node.js</h2>
+                    <div class="info-card">
+                        <ul>
+                            <li>Visita <strong>nodejs.org</strong> y descarga la versión LTS para tu sistema operativo.</li>
+                            <li>Durante la instalación acepta los valores por defecto; se instalará también <code>npm</code>.</li>
+                            <li>Verifica en tu terminal con <code>node -v</code> y <code>npm -v</code>.</li>
+                        </ul>
+                        <a class="download-link" href="https://nodejs.org/" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-download" aria-hidden="true"></i>
+                            Descarga Node.js (LTS)
+                        </a>
+                        <div class="qr-wrapper">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://nodejs.org/" alt="QR para descargar Node.js">
+                            <span>Escanéalo y descarga la versión LTS</span>
+                        </div>
+                    </div>
+                    <div class="example-note">
+                        <strong>SI hay problemas:</strong> usar <em>nvm</em> en macOS/Linux o el instalador oficial en Windows; compartir la pantalla para resolverlo juntos.
+                    </div>
+                </section>
+            </section>
+
+            <section data-transition="fade">
+                <h2><i class="fa-solid fa-list-check icon-heading" aria-hidden="true"></i> Agenda</h2>
+                <div class="info-card">
+                    <ul>
+                        <li>¿Por qué existen diferentes paradigmas?</li>
+                        <li>Comparativa imperativo vs declarativo vs funcional.</li>
+                        <li>Ejemplos prácticos, refactorización y mini desafío.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <section data-transition="slide">
+                    <h2><i class="fa-solid fa-code icon-heading" aria-hidden="true"></i> JavaScript esencial</h2>
+                    <div class="info-card">
+                        <p>Antes de hablar de paradigmas repasaremos los bloques básicos de JavaScript que usaremos hoy.</p>
+                        <ul>
+                            <li>Variables y tipos de datos.</li>
+                            <li>Funciones y alcance.</li>
+                            <li>Arreglos, objetos y métodos útiles.</li>
+                        </ul>
+                    </div>
+                    <div class="example-note">
+                        <strong>Idea clave:</strong> JavaScript es dinámico; el tipo se infiere a partir del valor almacenado.
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <h2><i class="fa-solid fa-i-cursor icon-heading" aria-hidden="true"></i> Variables y tipos</h2>
+                    <div class="concept-card">
+                        <div class="example-note">
+                            <strong>Recuerda:</strong> usa <code>const</code> para valores que no cambian y <code>let</code> cuando planeas reasignar.
+                        </div>
+                        <pre><code class="language-javascript">
+const curso = "Programación Funcional"; // string
+let estudiantes = 30;                   // number
+let enLinea = true;                     // boolean
+let temas = ["Paradigmas", "Funciones"]; // array
+let docente = { nombre: "Charlie", grado: "M.Sc." }; // objeto
+
+console.log(curso, estudiantes, enLinea, temas, docente);
+                        </code></pre>
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <h2><i class="fa-solid fa-route icon-heading" aria-hidden="true"></i> Control de flujo básico</h2>
+                    <div class="concept-card">
+                        <div class="example-note">
+                            <strong>Tip:</strong> la sintaxis <code>if/else</code> y los bucles tradicionales siguen siendo útiles, aunque pronto los reemplazaremos por expresiones más funcionales.
+                        </div>
+                        <pre><code class="language-javascript">
+const calificacion = 88;
+
+if (calificacion >= 90) {
+  console.log("Excelente");
+} else if (calificacion >= 70) {
+  console.log("Suficiente");
+} else {
+  console.log("Refuerzo necesario");
+}
+
+for (let i = 0; i < 3; i++) {
+  console.log(`Iteración ${i}`);
+}
+                        </code></pre>
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <h2><i class="fa-solid fa-function icon-heading" aria-hidden="true"></i> Funciones y alcance</h2>
+                    <div class="concept-card">
+                        <div class="glossary">
+                            <strong>Glosario:</strong>
+                            <ul>
+                                <li><strong>Función tradicional:</strong> se declara con <code>function</code> y define su propio contexto para <code>this</code>.</li>
+                                <li><strong>Función flecha (<code>=></code>):</strong> sintaxis corta, no crea un nuevo <code>this</code> ni <code>arguments</code>, ideal para callbacks.</li>
+                                <li><strong>¿Cuándo usar cuál?</strong> Usa flechas para funciones internas simples; conserva <code>function</code> cuando necesites tu propio <code>this</code> o hoisting.</li>
+                            </ul>
+                        </div>
+                        <pre><code class="language-javascript">
+function saludar(nombre) {
+  return `Hola ${nombre}`;
+}
+
+const despedir = (nombre) => `Adiós ${nombre}`;
+
+console.log(saludar("Ana"));
+console.log(despedir("Luis"));
+                        </code></pre>
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <h2><i class="fa-solid fa-list icon-heading" aria-hidden="true"></i> Arreglos y métodos útiles</h2>
+                    <div class="concept-card">
+                        <div class="example-note">
+                            <strong>Llave funcional:</strong> <code>map/filter/reduce</code> transforman sin mutar el arreglo original.
+                        </div>
+                        <div class="glossary">
+                            <strong>Glosario rápido:</strong>
+                            <ul>
+                                <li><code>map</code>: crea un nuevo arreglo con el resultado de aplicar una función a cada elemento.</li>
+                                <li><code>filter</code>: devuelve un arreglo con los elementos que cumplen una condición.</li>
+                                <li><code>reduce</code>: combina los elementos en un solo valor acumulado.</li>
+                                <li><strong>Mutar</strong>: cambiar un valor existente; en programación funcional intentamos evitarlo.</li>
+                            </ul>
+                        </div>
+                        <pre><code class="language-javascript">
+const numeros = [1, 2, 3, 4];
+
+const dobles = numeros.map((n) => n * 2);
+const pares = numeros.filter((n) => n % 2 === 0);
+const suma = numeros.reduce((acc, n) => acc + n, 0);
+
+console.log("Dobles:", dobles);
+console.log("Pares:", pares);
+console.log("Suma:", suma);
+                        </code></pre>
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <h2><i class="fa-solid fa-cubes icon-heading" aria-hidden="true"></i> Objetos y desestructuración</h2>
+                    <div class="concept-card">
+                        <div class="example-note">
+                            <strong>Por qué importa:</strong> desestructurar hace más legible el acceso a datos y favorece la inmutabilidad.
+                        </div>
+                        <div class="glossary">
+                            <strong>Glosario:</strong>
+                            <ul>
+                                <li><strong>Inmutabilidad:</strong> trabajar con copias en lugar de alterar el original. Evita efectos secundarios.</li>
+                                <li><strong>Mutar:</strong> modificar un dato existente (por ejemplo, cambiar un elemento de un arreglo).</li>
+                                <li><strong>Desestructurar:</strong> extraer propiedades de un objeto o elementos de un arreglo en variables nuevas.</li>
+                            </ul>
+                        </div>
+                        <pre><code class="language-javascript">
+const proyecto = {
+  nombre: "Calculadora FP",
+  versiones: ["alpha", "beta"]
+};
+
+const { nombre, versiones } = proyecto;
+const versionActual = versiones.at(-1); // última versión
+
+console.log(nombre, versionActual);
+                        </code></pre>
+                    </div>
+                </section>
+            </section>
+
+            <section data-transition="fade">
+                <h2><i class="fa-solid fa-chalkboard icon-heading" aria-hidden="true"></i> Ejemplo de repaso</h2>
+                <div class="concept-card">
+                    <p>Convertir un listado de productos en un catálogo legible:</p>
+                    <div class="example-note">
+                        <strong>Hazlo tú:</strong> aplica <code>filter</code> para mostrar solo los productos mayores a $50 y vuelve a generar las etiquetas.
+                    </div>
+                    <pre><code class="language-javascript">
+const productos = [
+  { nombre: "Teclado", precio: 45 },
+  { nombre: "Mouse", precio: 25 },
+  { nombre: "Monitor", precio: 180 }
+];
+
+const etiquetas = productos
+  .map((producto) => `${producto.nombre} - $${producto.precio}`)
+  .join("\n");
+
+console.log(etiquetas);
+                    </code></pre>
+                </div>
+            </section>
+
+            <section data-auto-animate>
+                    <h2><i class="fa-solid fa-diagram-project icon-heading" aria-hidden="true"></i> Tipos de paradigmas</h2>
+                    <div class="info-card">
+                        <ul>
+                            <li><strong>Imperativo:</strong> Describe paso a paso cómo lograr un resultado controlando el estado del programa.</li>
+                            <li><strong>Declarativo:</strong> Enfoca el "qué" del resultado, dejando al lenguaje decidir el flujo de ejecución.</li>
+                            <li><strong>Funcional:</strong> Variante declarativa que se apoya en funciones puras y composición para transformar datos.</li>
+                        </ul>
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <h3><i class="fa-solid fa-list-check" aria-hidden="true"></i> Paradigma imperativo</h3>
+                    <div class="concept-card">
+                        <p>Controla el flujo con instrucciones secuenciales y estados mutables. Ideal cuando necesitas exactitud en cada paso.</p>
+                        <span class="analogy">Analogía: seguir una receta paso a paso sin saltarse ninguna instrucción.</span>
+                        <div class="example-note">
+                            <strong>Ejemplo JS:</strong>
+                            <pre><code class="language-javascript">
+const numeros = [2, 4, 6, 3];
+let suma = 0;
+
+for (let i = 0; i < numeros.length; i++) {
+  suma += numeros[i];
+}
+
+console.log(suma);
+                            </code></pre>
+                        </div>
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <h3><i class="fa-solid fa-bullseye" aria-hidden="true"></i> Paradigma declarativo</h3>
+                    <div class="concept-card">
+                        <p>Describe la meta y delega en el lenguaje los pasos intermedios, reduciendo el manejo explícito de estado.</p>
+                        <span class="analogy">Analogía: indicar el plato que quieres y dejar que el chef decida la preparación.</span>
+                        <div class="example-note">
+                            <strong>Ejemplo JS:</strong>
+                            <pre><code class="language-javascript">
+const numeros = [2, 4, 6, 3];
+const suma = numeros.reduce((total, numero) => total + numero, 0);
+
+console.log(suma);
+                            </code></pre>
+                        </div>
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <h3><i class="fa-solid fa-code-branch" aria-hidden="true"></i> Paradigma funcional</h3>
+                    <div class="concept-card">
+                        <p>Aplica funciones puras y evita mutaciones para transformar datos mediante composición y orden superior.</p>
+                        <span class="analogy">Analogía: una línea de filtros que transforma un flujo de datos sin alterar el original.</span>
+                        <div class="example-note">
+                            <strong>Ejemplo JS:</strong>
+                            <pre><code class="language-javascript">
+const sumarPares = (lista) =>
+  lista.filter((numero) => numero % 2 === 0)
+       .reduce((total, numero) => total + numero, 0);
+
+console.log(sumarPares([2, 4, 6, 3]));
+                            </code></pre>
+                        </div>
+                    </div>
+                </section>
+
+            <section data-auto-animate>
+                    <h2><i class="fa-solid fa-atom icon-heading" aria-hidden="true"></i> Programación funcional en 3 ideas</h2>
+                    <div class="info-card">
+                        <ul>
+                            <li><strong>Funciones puras:</strong> producen el mismo resultado con los mismos datos y no generan efectos secundarios.</li>
+                            <li><strong>Inmutabilidad:</strong> preferimos crear nuevas versiones de los datos en lugar de modificarlos.</li>
+                            <li><strong>Composición:</strong> combinamos funciones pequeñas para obtener comportamientos más complejos.</li>
+                        </ul>
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <h3><i class="fa-solid fa-droplet-slash" aria-hidden="true"></i> Funciones puras</h3>
+                    <div class="concept-card">
+                        <p>Mismo input, mismo output, sin efectos secundarios. Facilita pruebas y paralelismo.</p>
+                        <span class="analogy">Analogía: una máquina expendedora siempre da el mismo producto si presionas el mismo botón.</span>
+                        <div class="example-note">
+                            <strong>Ejemplo JS:</strong>
+                            <pre><code class="language-javascript">
+const sumar = (a, b) => a + b;
+// sumar(2, 2) siempre devuelve 4 sin tocar nada externo
+                            </code></pre>
+                        </div>
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <h3><i class="fa-solid fa-infinity" aria-hidden="true"></i> Inmutabilidad</h3>
+                    <div class="concept-card">
+                        <p>Los datos no cambian: se crean copias modificadas. Evita estados inconsistentes.</p>
+                        <span class="analogy">Analogía: guardar versiones de un documento en la nube sin sobrescribir el original.</span>
+                        <div class="example-note">
+                            <strong>Ejemplo JS:</strong>
+                            <pre><code class="language-javascript">
+const lenguajes = ["Haskell", "Scala"];
+const nuevos = [...lenguajes, "Elixir"];
+// lenguajes permanece igual
+                            </code></pre>
+                        </div>
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <h3><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Composición</h3>
+                    <div class="concept-card">
+                        <p>Un resultado complejo surge de encadenar funciones pequeñas y reutilizables.</p>
+                        <span class="analogy">Analogía: cadena de montaje donde cada estación realiza una transformación.</span>
+                        <div class="example-note">
+                            <strong>Ejemplo JS:</strong>
+                            <pre><code class="language-javascript">
+const limpiar = (texto) => texto.trim();
+const enMayusculas = (texto) => texto.toUpperCase();
+const saludo = (nombre) => `Hola ${enMayusculas(limpiar(nombre))}!`;
+                            </code></pre>
+                        </div>
+                    </div>
+                </section>
+            <section data-transition="fade">
+                <h2><i class="fa-solid fa-circle-info icon-heading" aria-hidden="true"></i> Profundizando en la teoría</h2>
+                    <div class="info-card">
+                        <ul>
+                            <li><strong>Funciones puras:</strong> no dependen de variables externas mutables ni generan efectos (como escribir archivos).</li>
+                            <li><strong>Inmutabilidad:</strong> estructuras de datos persistentes permiten versiones previas sin copias costosas.</li>
+                            <li><strong>Composición:</strong> `resultado = funcionC(funcionB(funcionA(dato)))` resume un flujo complejo en una sola línea legible.</li>
+                        </ul>
+                    </div>
+                </section>
+                <section data-transition="slide">
+                    <h2><i class="fa-solid fa-code-compare icon-heading" aria-hidden="true"></i> Imperativo vs funcional</h2>
+                    <div class="side-by-side">
+                        <div class="concept-card">
+                            <span class="highlight-badge">
+                                <i class="fa-solid fa-list-ol" aria-hidden="true"></i> Enfoque imperativo
+                            </span>
+                            <pre><code>
+let resultado = [];
+for (let i = 0; i < numeros.length; i++) {
+  if (numeros[i] % 2 === 0) {
+    resultado.push(numeros[i] * 10);
+  }
+}
+                            </code></pre>
+                        </div>
+                        <div class="concept-card">
+                            <span class="highlight-badge">
+                                <i class="fa-solid fa-diagram-project" aria-hidden="true"></i> Enfoque funcional
+                            </span>
+                            <pre><code class="language-javascript">
+const resultado = numeros
+  .filter((n) => n % 2 === 0)
+  .map((n) => n * 10);
+                            </code></pre>
+                            <p>Se lee como una secuencia de transformaciones sobre la colección original.</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <section data-transition="slide">
+                <h2><i class="fa-solid fa-code icon-heading" aria-hidden="true"></i> Ejemplo en JavaScript</h2>
+                <div class="concept-card">
+                    <p><strong>Situación:</strong> generar un resumen con asistencia al día.</p>
+                    <pre><code class="language-javascript">
+const estudiantes = [
+  { nombre: "María", asistencia: true },
+  { nombre: "Juan", asistencia: false },
+  { nombre: "Ana", asistencia: true }
+];
+
+const resumen = estudiantes
+  .filter((estudiante) => estudiante.asistencia)
+  .map((estudiante) => `✅ ${estudiante.nombre}`);
+
+console.log(resumen); // ["✅ María", "✅ Ana"]
+                    </code></pre>
+                    <p>La función original no se modifica y la intención de cada paso es explícita.</p>
+                </div>
+            </section>
+
+            <section>
+                <section data-transition="slide">
+                    <h2><i class="fa-solid fa-people-arrows icon-heading" aria-hidden="true"></i> Actividad: refactorización en parejas</h2>
+                    <div class="info-card">
+                        <ul>
+                            <li>Tiempo estimado: 60–75 minutos (15 min análisis + 35 min refactorización + 15 min puesta en común).</li>
+                            <li>Objetivo: transformar lógica imperativa en una solución funcional usando <code>map</code>, <code>filter</code>, <code>reduce</code>.</li>
+                            <li>Roles sugeridos: quien codifica y quien revisa (rotar a mitad de la actividad).</li>
+                        </ul>
+                    </div>
+                    <div class="example-note">
+                        <strong>Contexto:</strong> trabajar con un listado de pedidos e identificar cuáles están listos para despacho.
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <h2><i class="fa-solid fa-code-branch icon-heading" aria-hidden="true"></i> Código base a refactorizar</h2>
+                    <div class="concept-card">
+                        <span class="analogy">Analogía: pasar de una línea de producción manual a una automatizada con estaciones especializadas.</span>
+                        <pre><code class="language-javascript">
+const pedidos = [
+  { id: 101, estado: "listo", total: 45.5 },
+  { id: 102, estado: "pendiente", total: 30.0 },
+  { id: 103, estado: "listo", total: 27.8 },
+  { id: 104, estado: "pendiente", total: 62.1 }
+];
+
+let idsListos = [];
+let totalListos = 0;
+
+for (let i = 0; i < pedidos.length; i++) {
+  const pedido = pedidos[i];
+  if (pedido.estado === "listo") {
+    idsListos.push(pedido.id);
+    totalListos += pedido.total;
+  }
+}
+
+console.log(idsListos);
+console.log(totalListos);
+                        </code></pre>
+                        <div class="example-note">
+                            <strong>Desafío:</strong> reescribir usando composición de funciones. Bonus: crear una función pura que reciba la lista y retorne un objeto con ids y total.
+                        </div>
+                    </div>
+                </section>
+                <section data-transition="convex">
+                    <h2><i class="fa-solid fa-comments icon-heading" aria-hidden="true"></i> Discusión y extensiones</h2>
+                    <div class="info-card">
+                        <ul>
+                            <li>Compartir soluciones: ¿qué funciones de orden superior utilizaron y por qué?</li>
+                            <li>Comparar performance: ¿qué tan legible quedó frente a la versión imperativa?</li>
+                            <li>Extensión opcional: añadir validaciones (e.g., filtrar pedidos cancelados) sin romper la pureza de las funciones.</li>
+                        </ul>
+                    </div>
+                    <div class="example-note">
+                        <strong>Tip:</strong> pedir que documenten en comentarios breves la intención de cada transformación.
+                    </div>
+                </section>
+            </section>
+
+            <section data-transition="zoom">
+                <h2><i class="fa-solid fa-puzzle-piece icon-heading" aria-hidden="true"></i> Mini desafío</h2>
+                <div class="concept-card">
+                    <p>Transforma la siguiente lógica a estilo funcional utilizando JavaScript:</p>
+                    <pre><code>
+lista = [3, 6, 9, 12, 15]
+resultado = []
+para cada numero en lista:
+    si numero > 8:
+        agregar numero / 3 a resultado
+                    </code></pre>
+                    <p><strong>Pista:</strong> usa <code>filter</code> para seleccionar los mayores a 8 y <code>map</code> para dividir cada valor antes de mostrar el resultado.</p>
+                </div>
+            </section>
+
+            <section data-transition="fade">
+                <h2><i class="fa-solid fa-lightbulb icon-heading" aria-hidden="true"></i> Para llevar</h2>
+                <div class="info-card">
+                    <ul>
+                        <li>Los paradigmas son diferentes formas de pensar un mismo problema.</li>
+                        <li>La programación funcional destaca por la claridad y facilidad para probar.</li>
+                        <li>Próxima semana: funciones de orden superior y expresiones lambda.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <section data-transition="slide">
+                    <h2><i class="fa-solid fa-road icon-heading" aria-hidden="true"></i> Hoja de ruta</h2>
+                    <div class="info-card">
+                        <ul>
+                            <li><strong>Semana 1:</strong> Paradigmas y fundamentos.</li>
+                            <li><strong>Semana 2:</strong> Funciones de orden superior y lambdas.</li>
+                            <li><strong>Semana 3:</strong> Recursividad y colecciones inmutables.</li>
+                            <li><strong>Semana 4:</strong> Tipos de datos y pattern matching.</li>
+                        </ul>
+                    </div>
+                    <div class="example-note">
+                        <strong>Meta:</strong> cada semana integra un laboratorio corto para reforzar la práctica funcional.
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <h2><i class="fa-solid fa-clipboard-check icon-heading" aria-hidden="true"></i> Siguientes pasos sugeridos</h2>
+                    <div class="info-card">
+                        <ul>
+                            <li>Repasar el compendio y completar el mini desafío con variaciones propias.</li>
+                            <li>Leer sobre closures y callbacks para anticipar la Semana 2.</li>
+                            <li>Traer un ejemplo imperativo personal para refactorizar en clase.</li>
+                        </ul>
+                    </div>
+                    <div class="example-note">
+                        <strong>Tip:</strong> abre un hilo en el aula virtual para compartir dudas o fragmentos de código antes de la próxima sesión.
+                    </div>
+                </section>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            plugins: [RevealNotes, RevealHighlight],
+            slideNumber: "c/t",
+            backgroundTransition: "fade"
+        });
+    </script>
+</body>
+
+</html>

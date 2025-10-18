@@ -1,0 +1,867 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Semana 1 - Paradigmas de Programación</title>
+
+    <!-- Reveal.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/theme/white.css" id="theme">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/highlight/monokai.css">
+
+    <!-- UIDE Theme CSS -->
+    <link rel="stylesheet" href="../../assets/css/uide-theme.css">
+
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <style>
+        .concept-box h4 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .r-hstack {
+                flex-direction: column;
+            }
+
+            .concept-box {
+                padding: 1rem;
+                font-size: 0.9em;
+            }
+
+            .concept-box h4 {
+                font-size: 1.1em;
+            }
+        }
+
+        .timeline-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        @media (max-width: 1024px) {
+            .timeline-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- Title Slide -->
+            <section data-background-color="#f8f8f8" data-transition="convex">
+                <div class="title-slide">
+                    <h1>Paradigmas de Programación</h1>
+                    <h2>Semana 1</h2>
+
+                    <div class="course-info">
+                        <strong>Programación Funcional</strong><br>
+                        <em>Prof. Charlie Cárdenas Toledo, M.Sc.</em><br>
+                        Universidad Técnica Particular de Loja • 2025
+                    </div>
+
+                    <div
+                        style="background: rgba(233, 171, 33, 0.1); border-radius: 8px; padding: 1em; margin: 1em 0; font-size: 0.9em;">
+                        <strong>Paradigmas de Programación y Programación Funcional</strong><br>
+                        <em>Semana 1 • Introducción a paradigmas: imperativo vs declarativo, historia y fundamentos de programación funcional</em>
+                    </div>
+
+                    <div style="margin-top: 2em; font-size: 0.9em; font-style: italic; color: var(--uide-secondary);">
+                        Inmutabilidad, funciones puras y desarrollo declarativo
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quote Slide -->
+            <section data-background-color="#f8f8f8">
+                <blockquote style="font-size: 1.2em; text-align: center;">
+                    <p><strong>"La programación funcional es un paradigma que tuvo sus orígenes hace casi un siglo atrás, pero que está renaciendo hoy en día para el desarrollo de aplicaciones de todo tipo."</strong></p>
+                    <footer style="margin-top: 1em; color: var(--uide-secondary);">
+                        — Federico Kereki, Ingeniero
+                    </footer>
+                </blockquote>
+            </section>
+
+            <!-- Curriculum Context -->
+            <section data-background-color="#f8f8f8">
+                <h2>Contenido de la Semana 1</h2>
+
+                <section>
+                    <h3>Paradigmas de Programación</h3>
+                    <div class="r-hstack">
+                        <div class="column">
+                            <h4>Semana 1 (Actual)</h4>
+                            <div
+                                style="background: rgba(233, 171, 33, 0.2); padding: 1em; border-radius: 8px; border: 2px solid var(--uide-accent);">
+                                <strong>Paradigmas de Programación</strong><br>
+                                <small>Imperativo vs Declarativo, Historia de la PF</small>
+                            </div>
+                        </div>
+                        <div class="column fragment">
+                            <h4>Próximamente</h4>
+                            <div style="background: rgba(145, 0, 72, 0.1); padding: 1em; border-radius: 8px;">
+                                <strong>Semana 2</strong><br>
+                                <small>Funciones y Expresiones Lambda</small>
+                            </div>
+                        </div>
+                        <div class="column fragment">
+                            <h4>Futuro</h4>
+                            <div style="background: rgba(35, 53, 110, 0.1); padding: 1em; border-radius: 8px;">
+                                <strong>Avanzado</strong><br>
+                                <small>Monadas y Categorías</small>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Temas de la Semana 1</h3>
+                    <div class="r-hstack">
+                        <div class="column">
+                            <h4>Contenidos Principales</h4>
+                            <ul>
+                                <li><mark>Paradigmas de Programación</mark></li>
+                                <li><mark>Programación Imperativa vs Declarativa</mark></li>
+                                <li><mark>Historia de la Programación Funcional</mark></li>
+                                <li><mark>Datos Inmutables</mark></li>
+                            </ul>
+                        </div>
+                        <div class="column fragment">
+                            <h4>Objetivos de Aprendizaje</h4>
+                            <ul>
+                                <li><strong>Conceptual:</strong> Distinguir paradigmas de programación</li>
+                                <li><strong>Histórico:</strong> Comprender evolución de la PF</li>
+                                <li><strong>Práctico:</strong> Aplicar principios de inmutabilidad</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Definición de Paradigmas de Programación -->
+            <section data-transition="convex">
+                <h2>Paradigmas de Programación</h2>
+
+                <section data-auto-animate>
+                    <h3>Definición General</h3>
+                    <div class="concept-box">
+                        <blockquote>
+                            <p><strong>"La programación es una disciplina que alberga múltiples enfoques o paradigmas, siendo dos de los más reconocidos la programación imperativa y la programación declarativa."</strong></p>
+                            <footer style="margin-top: 1em; color: var(--uide-secondary);">
+                                — Alarcón (2024)
+                            </footer>
+                        </blockquote>
+                        <p class="fragment">La programación funcional se considera uno de los grandes paradigmas de la programación.</p>
+                    </div>
+                </section>
+
+                <section data-auto-animate>
+                    <h3>Clasificación de Paradigmas</h3>
+                    <div class="concept-box">
+                        <p>A nivel conceptual, la programación se divide en <mark>dos grandes ramas</mark>:</p>
+                        <div class="r-hstack fragment">
+                            <div class="column">
+                                <div style="background: rgba(220, 53, 69, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-code"></i> Imperativa</h5>
+                                    <p>Programación Estructurada, Procedimental (C, Go), Orientada a Objetos (Java, PHP)</p>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div style="background: rgba(40, 167, 69, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-cogs"></i> Declarativa</h5>
+                                    <p>Programación Funcional (Haskell, Scala), Programación Lógica (Prolog)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section data-auto-animate>
+                    <h3>Programación Imperativa</h3>
+                    <div class="concept-box">
+                        <h4>Características del paradigma imperativo</h4>
+                        <div class="r-vstack">
+                            <div class="fragment" style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px;">
+                                <h5><i class="fas fa-route"></i> Enfoque en el "Cómo"</h5>
+                                <p>Se centra en los algoritmos y el flujo de control, proporcionando instrucciones detalladas paso a paso</p>
+                            </div>
+                            
+                            <div class="fragment" style="background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px;">
+                                <h5><i class="fas fa-edit"></i> Estados Mutables</h5>
+                                <p>Utiliza comandos consecutivos para modificar el estado del programa</p>
+                            </div>
+                            
+                            <div class="fragment" style="background: rgba(145, 0, 72, 0.1); padding: 1rem; border-radius: 8px;">
+                                <h5><i class="fas fa-clock"></i> Orden de Ejecución</h5>
+                                <p>El orden de ejecución de las instrucciones es crucial</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section data-auto-animate>
+                    <h3>Aspectos de la Producción de Software</h3>
+                    <div class="concept-box">
+                        <h4>Ciclo de Vida Completo</h4>
+                        <div class="r-hstack">
+                            <div class="column fragment">
+                                <div style="background: rgba(40, 167, 69, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-clipboard-list"></i> Especificación</h5>
+                                    <p>Definición de requerimientos y funcionalidades</p>
+                                </div>
+                                <div style="background: rgba(40, 167, 69, 0.1); padding: 1rem; border-radius: 8px; margin-top: 0.5rem;">
+                                    <h5><i class="fas fa-drafting-compass"></i> Diseño</h5>
+                                    <p>Arquitectura y estructura del sistema</p>
+                                </div>
+                            </div>
+                            <div class="column fragment">
+                                <div style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-hammer"></i> Implementación</h5>
+                                    <p>Construcción y codificación del software</p>
+                                </div>
+                                <div style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px; margin-top: 0.5rem;">
+                                    <h5><i class="fas fa-tools"></i> Mantenimiento</h5>
+                                    <p>Evolución y soporte post-implementación</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section data-auto-animate>
+                    <h3>Importancia en la Era Digital</h3>
+                    <div class="concept-box">
+                        <h4>Omnipresencia del Software</h4>
+                        <p>Actualmente, el software es fundamental en:</p>
+                        
+                        <div class="r-hstack">
+                            <div class="column fragment">
+                                <div style="background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-building"></i> Empresas</h5>
+                                    <p>Sistemas de gestión, CRM, ERP</p>
+                                </div>
+                                <div style="background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px; margin-top: 0.5rem;">
+                                    <h5><i class="fas fa-mobile-alt"></i> Dispositivos</h5>
+                                    <p>Smartphones, tablets, IoT</p>
+                                </div>
+                            </div>
+                            <div class="column fragment">
+                                <div style="background: rgba(145, 0, 72, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-car"></i> Transporte</h5>
+                                    <p>Vehículos autónomos, sistemas de navegación</p>
+                                </div>
+                                <div style="background: rgba(145, 0, 72, 0.1); padding: 1rem; border-radius: 8px; margin-top: 0.5rem;">
+                                    <h5><i class="fas fa-heartbeat"></i> Salud</h5>
+                                    <p>Dispositivos médicos, telemedicina</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <p class="fragment" style="text-align: center; margin-top: 1.5rem; font-weight: bold;">
+                            <i class="fas fa-exclamation-triangle"></i> La calidad del software puede significar la diferencia entre el éxito y el fracaso
+                        </p>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Programación Declarativa -->
+            <section data-transition="convex">
+                <h2>Programación Declarativa</h2>
+
+                <section data-auto-animate>
+                    <h3>Definición del Paradigma Declarativo</h3>
+                    <div class="concept-box">
+                        <blockquote>
+                            <p><strong>"La programación declarativa se enfoca en el 'qué' se desea lograr, delegando en el lenguaje o framework el cómo alcanzar el resultado."</strong></p>
+                            <footer style="margin-top: 1em; color: var(--uide-secondary);">
+                                — Universidad de Sevilla
+                            </footer>
+                        </blockquote>
+                        <p class="fragment">Es una "capa de abstracción" donde se describe la solución sin entrar en los detalles de su control de flujo.</p>
+                    </div>
+                </section>
+
+                <section data-auto-animate>
+                    <h3>Ventajas de la Programación Declarativa</h3>
+                    <div class="concept-box">
+                        <h4>Beneficios del Enfoque Declarativo</h4>
+                        <p>La programación declarativa "tiende a producir <strong>código más corto, legible y fácil de mantener</strong>".</p>
+                        
+                        <div class="r-hstack fragment">
+                            <div class="column">
+                                <div style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-bullseye"></i> Enfoque en Resultados</h5>
+                                    <p>Se centra en el <strong>resultado final</strong> y evita los estados mutables</p>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div style="background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-random"></i> Orden No Relevante</h5>
+                                    <p>El <strong>orden de ejecución no es relevante</strong> en el enfoque declarativo</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section data-auto-animate>
+                    <h3>Modelos de Servicio Cloud</h3>
+                    <div class="r-vstack">
+                        <div class="concept-box fragment">
+                            <h4>1. IaaS - Infrastructure as a Service</h4>
+                            <p>El proveedor gestiona <strong>hardware, redes, discos duros y almacenamiento</strong>, mientras que el usuario controla el sistema operativo, aplicaciones y middleware.</p>
+                        </div>
+                        
+                        <div class="concept-box fragment">
+                            <h4>2. PaaS - Platform as a Service</h4>
+                            <p>Modelo más avanzado donde el proveedor ofrece, ejecuta y mantiene tanto el <strong>software del sistema</strong> como otros recursos informáticos.</p>
+                        </div>
+                        
+                        <div class="concept-box fragment">
+                            <h4>3. SaaS - Software as a Service</h4>
+                            <p>El proveedor gestiona la aplicación y la infraestructura. <strong>Modelo preferido en empresas cloud native</strong>.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section data-auto-animate>
+                    <h3>Arquitecturas Cloud Native</h3>
+                    <div class="concept-box">
+                        <h4>Cambio Fundamental</h4>
+                        <div class="r-hstack">
+                            <div class="column fragment">
+                                <div style="background: rgba(40, 167, 69, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-sitemap"></i> Microservicios</h5>
+                                    <p>Descomponer aplicaciones en servicios pequeños</p>
+                                </div>
+                                <div style="background: rgba(40, 167, 69, 0.1); padding: 1rem; border-radius: 8px; margin-top: 0.5rem;">
+                                    <h5><i class="fas fa-box"></i> Contenedores</h5>
+                                    <p>Empaquetado ligero (Docker)</p>
+                                </div>
+                            </div>
+                            <div class="column fragment">
+                                <div style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-network-wired"></i> Orquestación</h5>
+                                    <p>Gestión automatizada (Kubernetes)</p>
+                                </div>
+                                <div style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px; margin-top: 0.5rem;">
+                                    <h5><i class="fas fa-code-branch"></i> IaC</h5>
+                                    <p>Infraestructura como código: de días a minutos</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Historia de la Programación Funcional -->
+            <section>
+                <h2>Historia de la Programación Funcional</h2>
+
+                <section>
+                    <h3>Orígenes Matemáticos</h3>
+                    <div class="concept-box">
+                        <h4>Cálculo Lambda de Alonzo Church</h4>
+                        <blockquote>
+                            <p><strong>"En computación, la programación funcional es un paradigma que tuvo sus orígenes hace casi un siglo atrás, pero que está renaciendo hoy en día para el desarrollo de aplicaciones de todo tipo."</strong></p>
+                            <footer style="margin-top: 1em; color: var(--uide-secondary);">
+                                — Federico Kereki
+                            </footer>
+                        </blockquote>
+                        
+                        <div class="r-hstack fragment">
+                            <div class="column">
+                                <div style="background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-calculator"></i> Años 30</h5>
+                                    <p>Nació el "<strong>cálculo lambda</strong>" inventado por el matemático Alonzo Church, ¡años antes de que existieran computadoras programables!</p>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div style="background: rgba(145, 0, 72, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-lightbulb"></i> Computabilidad</h5>
+                                    <p>Se estaba estudiando el tema de la "<strong>computabilidad</strong>" en las matemáticas abstractas</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Evolución del Paradigma</h3>
+                    <div class="concept-box">
+                        <h4>LISP y el Renacimiento Moderno</h4>
+                        <p>El primer lenguaje funcional usado ampliamente fue <strong>LISP</strong>, creado casi llegando a los años 60.</p>
+                        
+                        <div style="text-align: center; margin: 2rem 0;">
+                            <div style="background: rgba(35, 53, 110, 0.1); padding: 1.5rem; border-radius: 12px; display: inline-block;">
+                                <p style="font-size: 1.3em; margin: 0;">
+                                    <strong>LISP es el segundo lenguaje más antiguo aún en uso, después de FORTRAN</strong>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <p class="fragment">LISP fue muy aplicado a temas de <strong>Inteligencia Artificial</strong>. La PF fue inicialmente "dejada de lado" debido a sus orígenes matemáticos, pero hoy ha resurgido como herramienta importante.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>AIOps - AI for IT Operations</h3>
+                    <div class="concept-box">
+                        <h4>Inteligencia Artificial para Operaciones de TI</h4>
+                        <p>Combina IA y algoritmos de <strong>Machine Learning</strong> con prácticas tradicionales de gestión de Operaciones de TI.</p>
+                        
+                        <div class="fragment" style="background: rgba(40, 167, 69, 0.1); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                            <h5><i class="fas fa-bullseye"></i> Objetivos de AIOps</h5>
+                            <blockquote style="font-size: 0.9em;">
+                                <p><strong>"Alta inteligencia de servicio. Un servicio impulsado por AIOps será consciente a tiempo de los cambios desde múltiples aspectos, por ejemplo, degradación de la calidad, aumento de los costes, aumento de la carga de trabajo, etc."</strong></p>
+                            </blockquote>
+                            <p>Autoconciencia y predictibilidad que desencadena comportamientos de <strong>autoadaptación o autocuración</strong> con escasa intervención humana.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Software como Producto</h3>
+                    <div class="concept-box">
+                        <h4>Más Allá de la Programación</h4>
+                        <div class="r-hstack">
+                            <div class="column fragment">
+                                <div style="background: rgba(220, 53, 69, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-exclamation-triangle"></i> Importancia de la Calidad</h5>
+                                    <p>Si el software falla, "las personas y las grandes empresas pueden experimentar desde <strong>inconvenientes menores hasta consecuencias catastróficas</strong>"</p>
+                                </div>
+                            </div>
+                            <div class="column fragment">
+                                <div style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-bullseye"></i> Enfoque de Producto</h5>
+                                    <p>Comprensión de las <strong>necesidades del cliente</strong> y arquitectura del software</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="fragment" style="margin-top: 1.5rem;">
+                            <h5>SOA - Service-Oriented Architecture</h5>
+                            <p>La Web evoluciona "desde un almacén de información hacia una <strong>plataforma de implementación de sistemas</strong>".</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Características de la Programación Funcional -->
+            <section>
+                <h2>Características de la Programación Funcional</h2>
+
+                <section>
+                    <h3>Definición de la Programación Funcional</h3>
+                    <div class="concept-box">
+                        <h4>Estilo de Programación Declarativa</h4>
+                        <p>La programación funcional es un <strong>estilo de programación declarativa</strong> que se basa en la definición y evaluación de funciones.</p>
+                        
+                        <div style="text-align: center; margin: 2rem 0;">
+                            <div style="background: rgba(40, 167, 69, 0.1); padding: 1.5rem; border-radius: 12px; display: inline-block;">
+                                <p style="font-size: 1.3em; margin: 0;">
+                                    <strong>Evita el concepto de variables mutables</strong>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <p class="fragment">Su método básico de computación es la <strong>aplicación de funciones a sus argumentos</strong>.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Características Clave</h3>
+                    <div class="concept-box">
+                        <h4>Elementos Fundamentales de la PF</h4>
+                        <div class="r-hstack">
+                            <div class="column fragment">
+                                <div style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-function"></i> Funciones de Primera Clase</h5>
+                                    <p>Las funciones pueden ser tratadas como valores, recibiendo y devolviendo otras funciones</p>
+                                </div>
+                                <div style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px; margin-top: 0.5rem;">
+                                    <h5><i class="fas fa-gem"></i> Funciones Puras</h5>
+                                    <p>El valor solo depende de sus argumentos y no tienen efectos secundarios</p>
+                                </div>
+                                <div style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px; margin-top: 0.5rem;">
+                                    <h5><i class="fas fa-layer-group"></i> Recursión</h5>
+                                    <p>Uso de recursividad en lugar de bucles tradicionales</p>
+                                </div>
+                            </div>
+                            <div class="column fragment">
+                                <div style="background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-lock"></i> Inmutabilidad</h5>
+                                    <p>Los datos no pueden ser modificados una vez creados</p>
+                                </div>
+                                <div style="background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px; margin-top: 0.5rem;">
+                                    <h5><i class="fas fa-list"></i> Declarativa</h5>
+                                    <p>Se expresa qué se quiere hacer, no el cómo</p>
+                                </div>
+                                <div style="background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px; margin-top: 0.5rem;">
+                                    <h5><i class="fas fa-arrows-alt-h"></i> Transparencia Referencial</h5>
+                                    <p>Mismo conjunto de entradas siempre devuelve el mismo resultado</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Riesgos de la IA Generativa</h3>
+                    <div class="concept-box">
+                        <h4>Riesgos Únicos vs IA Tradicional</h4>
+                        <div class="r-vstack">
+                            <div class="fragment" style="background: rgba(220, 53, 69, 0.1); padding: 1rem; border-radius: 8px;">
+                                <h5><i class="fas fa-skull-crossbones"></i> Toxicidad</h5>
+                                <p>Resultados generados ofensivos o inaceptables</p>
+                            </div>
+                            
+                            <div class="fragment" style="background: rgba(255, 193, 7, 0.1); padding: 1rem; border-radius: 8px;">
+                                <h5><i class="fas fa-balance-scale"></i> Discriminación</h5>
+                                <p>El modelo no funciona de manera equitativa para todos los grupos sociales</p>
+                            </div>
+                            
+                            <div class="fragment" style="background: rgba(108, 117, 125, 0.1); padding: 1rem; border-radius: 8px;">
+                                <h5><i class="fas fa-newspaper"></i> Desinformación y Manipulación</h5>
+                                <p>Información inexacta o uso para influir en opinión pública o procesos electorales</p>
+                            </div>
+                            
+                            <div class="fragment" style="background: rgba(145, 0, 72, 0.1); padding: 1rem; border-radius: 8px;">
+                                <h5><i class="fas fa-robot"></i> Interacción Humano-Computadora</h5>
+                                <p>Las personas siguen ciegamente las indicaciones erróneas del modelo</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Marco Regulatorio</h3>
+                    <div class="concept-box">
+                        <h4>Gobernanza Global</h4>
+                        <div class="r-hstack">
+                            <div class="column fragment">
+                                <div style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-globe"></i> UNESCO (2021)</h5>
+                                    <p><strong>"Recomendación sobre la Ética de la IA"</strong> - Primer instrumento normativo global</p>
+                                    <ul style="text-align: left; font-size: 0.8em;">
+                                        <li>Seguridad</li>
+                                        <li>No discriminación</li>
+                                        <li>Transparencia</li>
+                                        <li>Supervisión humana</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="column fragment">
+                                <div style="background: rgba(145, 0, 72, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-flag"></i> AI Act (UE)</h5>
+                                    <p>Enfoque basado en <strong>clasificación de riesgos</strong></p>
+                                    <p style="font-size: 0.9em;">Prohíbe sistemas con "riesgos inaceptables" que vulneren derechos fundamentales</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="fragment" style="margin-top: 1.5rem; background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px;">
+                            <h5><i class="fas fa-ban"></i> Prácticas Prohibidas (AI Act)</h5>
+                            <p>Manipulación cognitivo-conductual de personas vulnerables, como niños o personas con discapacidades. Los contenidos generados por IA <strong>deben estar claramente etiquetados</strong>.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Principio Ético Fundamental</h3>
+                    <div class="concept-box">
+                        <h4>ACM Code of Ethics (2018)</h4>
+                        <div style="text-align: center; margin: 2rem 0;">
+                            <div style="background: rgba(220, 53, 69, 0.1); padding: 2rem; border-radius: 15px; display: inline-block;">
+                                <p style="font-size: 1.5em; margin: 0; font-weight: bold;">
+                                    "Nunca viole la privacidad de un individuo, un grupo o una organización"
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="fragment">
+                            <h5><i class="fas fa-landmark"></i> Blueprint for an AI Bill of Rights (2023)</h5>
+                            <p>Casa Blanca establece cinco protecciones fundamentales, siendo la <strong>privacidad de los datos</strong> una de las centrales.</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Inmutabilidad y Lenguajes Funcionales -->
+            <section>
+                <h2>Inmutabilidad y Lenguajes Funcionales</h2>
+
+                <section>
+                    <h3>Concepto de Inmutabilidad</h3>
+                    <div class="concept-box">
+                        <h4>Propiedad Fundamental</h4>
+                        <p>La inmutabilidad es un <strong>principio central</strong> en la programación funcional que define la propiedad de un objeto que no puede ser modificado una vez creado.</p>
+                        
+                        <div class="fragment" style="background: rgba(233, 171, 33, 0.1); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                            <h5><i class="fas fa-shield-alt"></i> Características de la Inmutabilidad</h5>
+                            <ul style="text-align: left;">
+                                <li><strong>Seguridad:</strong> Evita condiciones de carrera en entornos concurrentes</li>
+                                <li><strong>Claridad:</strong> El estado se mantiene constante durante la vida útil del objeto</li>
+                                <li><strong>Testing:</strong> Simplifica la depuración y creación de pruebas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Lenguajes de Programación Funcional</h3>
+                    <div class="concept-box">
+                        <h4>Clasificación de Lenguajes</h4>
+                        <div class="r-vstack">
+                            <div class="fragment" style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px;">
+                                <h5><i class="fas fa-gem"></i> Lenguajes Puros</h5>
+                                <p><strong>Haskell, Miranda:</strong> Adoptan el paradigma completamente, con funciones puras sin estado mutable ni efectos secundarios</p>
+                            </div>
+                            
+                            <div class="fragment" style="background: rgba(145, 0, 72, 0.1); padding: 1rem; border-radius: 8px;">
+                                <h5><i class="fas fa-balance-scale"></i> Lenguajes Impuros (Multiparadigma)</h5>
+                                <p><strong>Scala, Python, Java 8+, Kotlin, Rust, Clojure, JavaScript:</strong> Permiten características funcionales junto con otros paradigmas</p>
+                            </div>
+                            
+                            <div class="fragment" style="background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px;">
+                                <h5><i class="fas fa-history"></i> Lenguajes Históricos</h5>
+                                <p><strong>LISP:</strong> Primer lenguaje funcional ampliamente usado, creado cerca de los años 60, muy aplicado en IA</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Herramienta: Lean Canvas</h3>
+                    <div class="concept-box">
+                        <h4>Formulación de Hipótesis</h4>
+                        <p>Una herramienta útil para formular hipótesis a verificar, enfocándose en:</p>
+                        
+                        <div class="r-hstack">
+                            <div class="column fragment">
+                                <div style="background: rgba(40, 167, 69, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-users"></i> Segmentos de Usuarios</h5>
+                                    <p>Identificación de usuarios objetivo</p>
+                                </div>
+                                <div style="background: rgba(40, 167, 69, 0.1); padding: 1rem; border-radius: 8px; margin-top: 0.5rem;">
+                                    <h5><i class="fas fa-exclamation"></i> Problema a Resolver</h5>
+                                    <p>Definición clara del problema</p>
+                                </div>
+                            </div>
+                            <div class="column fragment">
+                                <div style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-tools"></i> Soluciones Existentes</h5>
+                                    <p>Análisis de alternativas actuales</p>
+                                </div>
+                                <div style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px; margin-top: 0.5rem;">
+                                    <h5><i class="fas fa-gem"></i> Propuesta de Valor Única</h5>
+                                    <p>Diferenciación y ventaja competitiva</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Identificación de Stakeholders</h3>
+                    <div class="concept-box">
+                        <h4>Partes Interesadas</h4>
+                        <blockquote>
+                            <p><strong>"Cualquier persona que se beneficie de forma directa o indirecta del sistema que se está desarrollando"</strong></p>
+                            <footer>— Sommerville y Sawyer (1997)</footer>
+                        </blockquote>
+                        
+                        <div class="fragment" style="background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                            <p style="font-style: italic;">"Un stakeholder es una persona que sostiene una estaca grande y afilada... Si no cuidas de tus stakeholders, sabes dónde terminará la estaca."</p>
+                            <footer style="text-align: right; font-size: 0.8em;">— Rob Thomsett</footer>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Taxonomía de Stakeholders</h3>
+                    <div class="concept-box">
+                        <h4>Roles y Responsabilidades</h4>
+                        <div class="r-hstack">
+                            <div class="column fragment">
+                                <div style="background: rgba(145, 0, 72, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-user-tie"></i> Gerentes Senior</h5>
+                                    <p>Dueños de producto, definen cuestiones empresariales</p>
+                                </div>
+                                <div style="background: rgba(145, 0, 72, 0.1); padding: 1rem; border-radius: 8px; margin-top: 0.5rem;">
+                                    <h5><i class="fas fa-bullseye"></i> Gerentes de Proyecto</h5>
+                                    <p>Scrum masters, planifican y organizan</p>
+                                </div>
+                                <div style="background: rgba(145, 0, 72, 0.1); padding: 1rem; border-radius: 8px; margin-top: 0.5rem;">
+                                    <h5><i class="fas fa-cogs"></i> Practicantes</h5>
+                                    <p>Ingenieros de software, habilidades técnicas</p>
+                                </div>
+                            </div>
+                            <div class="column fragment">
+                                <div style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-briefcase"></i> Clientes</h5>
+                                    <p>Especifican requerimientos del software</p>
+                                </div>
+                                <div style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px; margin-top: 0.5rem;">
+                                    <h5><i class="fas fa-user"></i> Usuarios Finales</h5>
+                                    <p>Interactúan con el software en producción</p>
+                                </div>
+                                <div style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px; margin-top: 0.5rem;">
+                                    <h5><i class="fas fa-tools"></i> Soporte</h5>
+                                    <p>Marketing, mantenimiento, consultores</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Proceso de Elicitación</h3>
+                    <div class="concept-box">
+                        <h4>Colaboración Efectiva</h4>
+                        <p>La <strong>comunicación entre todos los stakeholders</strong> y el equipo de software debe establecerse al inicio.</p>
+                        
+                        <div class="fragment" style="background: rgba(220, 53, 69, 0.1); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                            <h5><i class="fas fa-exclamation-triangle"></i> Realidad del Desarrollo</h5>
+                            <p><strong>"Es imposible para las partes interesadas describir un sistema completo antes de ver el software en funcionamiento"</strong></p>
+                            <p>Los requerimientos se añaden y refinan a medida que se crean incrementos de software.</p>
+                        </div>
+                        
+                        <div class="fragment">
+                            <h5><i class="fas fa-bullseye"></i> Estrategia de Elicitación</h5>
+                            <p>Es vital elicitar los requerimientos de una <strong>"muestra representativa de usuarios"</strong> para reducir el riesgo de aceptación.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Técnicas de Elicitación</h3>
+                    <div class="concept-box">
+                        <h4>Métodos para Capturar Requerimientos</h4>
+                        <div class="r-hstack">
+                            <div class="column fragment">
+                                <div style="background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-question-circle"></i> Preguntas Libres de Contexto</h5>
+                                    <p>Se centran en el cliente, objetivos del proyecto y beneficios económicos</p>
+                                </div>
+                                <div style="background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px; margin-top: 0.5rem;">
+                                    <h5><i class="fas fa-handshake"></i> Reuniones Facilitadas</h5>
+                                    <p>Colaboración estructurada entre stakeholders</p>
+                                </div>
+                            </div>
+                            <div class="column fragment">
+                                <div style="background: rgba(40, 167, 69, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-book"></i> Escenarios de Uso</h5>
+                                    <p>User scenarios y user stories para refinar comprensión</p>
+                                </div>
+                                <div style="background: rgba(40, 167, 69, 0.1); padding: 1rem; border-radius: 8px; margin-top: 0.5rem;">
+                                    <h5><i class="fas fa-hammer"></i> Prototipos</h5>
+                                    <p>Capturar descripciones de lo que el sistema debe hacer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Referencias -->
+            <section>
+                <h2>Referencias Bibliográficas</h2>
+
+                <div class="references-container" style="font-size: 0.75em; text-align: left;">
+                    <p><strong>Alarcón, J. M.</strong> (2024, 30 de octubre). Guía completa: programación imperativa vs declarativa con ejemplos claros. campusMVP.</p>
+                    
+                    <p><strong>AI-FutureSchool.</strong> (n.d.). Inmutabilidad en programación: conceptos clave y ejemplos.</p>
+                    
+                    <p><strong>Autentia.</strong> (n.d.). Introducción al Backend y Java. (Fichas Back).</p>
+                    
+                    <p><strong>Kereki, F.</strong> (n.d.). El discreto encanto de la programación funcional. Universidad de la Empresa (UDE).</p>
+                    
+                    <p><strong>knowmad mood.</strong> (n.d.). Programación Funcional Básico.</p>
+                    
+                    <p><strong>Refactorización Funcional.</strong> (n.d.). (Extraído parcialmente del tutorial Haskell Fast & Hard).</p>
+                    
+                    <p><strong>Reddit.</strong> (2025). ¿Haskell o Clojure para acercarse a la programación funcional (PF)?. r/functionalprogramming.</p>
+                    
+                    <p><strong>Universidad de Sevilla.</strong> (n.d.). Tema 1 - Programación declarativa y funcional. Dpto. Ciencias de la Computación e Inteligencia Artificial.</p>
+                    
+                    <p><strong>Wikipedia.</strong> (n.d.). Categoría:Lenguajes funcionales.</p>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Reveal.js JavaScript with all plugins -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/math/math.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/zoom/zoom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/search/search.js"></script>
+
+    <script>
+        Reveal.initialize({
+            hash: true,
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            transition: 'slide',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade',
+
+            autoAnimateEasing: 'ease',
+            autoAnimateDuration: 1.0,
+            autoAnimateUnmatched: true,
+
+            math: {
+                mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+                config: 'TeX-AMS_HTML-full',
+            },
+
+            zoom: {
+                mouseWheel: false,
+                maxZoom: 3,
+                controls: true
+            },
+
+            search: {
+                caseSensitive: false,
+                showIcon: true
+            },
+
+            keyboard: {
+                70: 'fullscreen', // f
+                83: 'next', // s
+                65: 'prev', // a
+                66: 'pause', // b
+                90: 'zoom', // z
+                191: 'search' // /
+            },
+
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX, RevealZoom, RevealSearch]
+        });
+    </script>
+
+</body>
+
+</html>
