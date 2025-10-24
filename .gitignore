@@ -1,0 +1,25 @@
+# Ignorar archivos JavaScript
+*.js
+
+# Ignorar archivos de configuración de Node.js
+node_modules/
+package-lock.json
+yarn.lock
+
+# Ignorar archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos de editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignorar archivos de logs
+*.log
+logs/
+
+# Ignorar archivos temporales
+*.tmp
+*.temp

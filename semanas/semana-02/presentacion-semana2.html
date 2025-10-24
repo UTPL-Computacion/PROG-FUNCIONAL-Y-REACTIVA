@@ -24,83 +24,116 @@
         crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <style>
+        /* Reducir tamaño de fuente base AGRESIVAMENTE */
+        .reveal {
+            font-size: 28px; /* Reducido agresivamente de 34px */
+        }
+
+        .reveal h1 {
+            font-size: 1.8em; /* Reducido agresivamente de 2.3em */
+        }
+
+        .reveal h2 {
+            font-size: 1.1em; /* Reducido agresivamente de 1.4em */
+        }
+
+        .reveal h3 {
+            font-size: 0.9em; /* Reducido agresivamente de 1.1em */
+        }
+
+        .reveal p, .reveal li {
+            font-size: 0.75em; /* Reducido agresivamente de 0.9em */
+        }
+
         .info-card {
             background: rgba(0, 63, 114, 0.05);
             border: 1px solid rgba(0, 63, 114, 0.18);
-            border-radius: 12px;
-            padding: 0.9em 1.1em;
-            margin-top: 0.6em;
+            border-radius: 6px; /* Reducido agresivamente de 10px */
+            padding: 0.3em 0.4em; /* Reducido agresivamente de 0.6em 0.8em */
+            margin-top: 0.2em; /* Reducido agresivamente de 0.4em */
+            font-size: 0.7em; /* Reducido agresivamente de 0.85em */
         }
 
         .concept-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1em;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Reducido agresivamente de 220px */
+            gap: 0.4em; /* Reducido agresivamente de 0.8em */
         }
 
         .concept-card {
             background: white;
-            border-radius: 10px;
+            border-radius: 5px; /* Reducido agresivamente de 8px */
             border: 1px solid rgba(0, 63, 114, 0.12);
-            padding: 0.9em 1em;
-            box-shadow: 0 6px 18px rgba(0, 63, 114, 0.08);
+            padding: 0.3em 0.4em; /* Reducido agresivamente de 0.6em 0.7em */
+            box-shadow: 0 2px 6px rgba(0, 63, 114, 0.08); /* Reducido agresivamente */
         }
 
         .concept-card h3 {
             display: flex;
             align-items: center;
-            gap: 0.5em;
-            margin: 0;
+            gap: 0.2em; /* Reducido agresivamente de 0.4em */
+            margin: 0 0 0.2em 0; /* Reducido agresivamente margen inferior */
             color: var(--uide-primary);
+            font-size: 0.8em; /* Reducido agresivamente de 1em */
+        }
+
+        .concept-card p {
+            font-size: 0.65em; /* Reducido agresivamente de 0.8em */
+            margin-bottom: 0.2em; /* Reducido agresivamente de 0.5em */
+            line-height: 1.2; /* Reducido line-height */
         }
 
         .highlight-badge {
             display: inline-flex;
             align-items: center;
-            gap: 0.4em;
-            padding: 0.45em 0.85em;
+            gap: 0.2em; /* Reducido agresivamente de 0.3em */
+            padding: 0.2em 0.4em; /* Reducido agresivamente de 0.35em 0.7em */
             border-radius: 999px;
             background: rgba(233, 171, 33, 0.18);
             color: var(--uide-primary);
             font-weight: 600;
+            font-size: 0.7em; /* Reducido agresivamente de 0.85em */
         }
 
         .side-by-side {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1em;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Reducido agresivamente de 260px */
+            gap: 0.4em; /* Reducido agresivamente de 0.8em */
             align-items: start;
         }
 
         .example-note {
-            margin-top: 0.6em;
-            font-size: 0.88em;
+            margin-top: 0.2em; /* Reducido agresivamente de 0.4em */
+            font-size: 0.6em; /* Reducido agresivamente de 0.75em */
             background: rgba(0, 63, 114, 0.06);
             border-left: 3px solid var(--uide-primary);
-            padding: 0.55em 0.75em;
-            border-radius: 7px;
+            padding: 0.2em 0.3em; /* Reducido agresivamente de 0.4em 0.6em */
+            border-radius: 4px; /* Reducido agresivamente de 6px */
+            line-height: 1.2; /* Reducido line-height */
         }
 
         .glossary {
-            margin-top: 0.6em;
-            font-size: 0.86em;
+            margin-top: 0.2em; /* Reducido agresivamente de 0.4em */
+            font-size: 0.6em; /* Reducido agresivamente de 0.74em */
             background: rgba(0, 63, 114, 0.05);
             border-left: 3px solid rgba(0, 63, 114, 0.4);
-            padding: 0.55em 0.75em;
-            border-radius: 7px;
+            padding: 0.2em 0.3em; /* Reducido agresivamente de 0.4em 0.6em */
+            border-radius: 4px; /* Reducido agresivamente de 6px */
+            line-height: 1.2; /* Reducido line-height */
         }
 
         .download-link {
             display: inline-flex;
             align-items: center;
-            gap: 0.45em;
-            padding: 0.45em 0.9em;
+            gap: 0.2em; /* Reducido agresivamente de 0.35em */
+            padding: 0.2em 0.4em; /* Reducido agresivamente de 0.35em 0.7em */
             background: var(--uide-primary);
             color: #fff;
-            border-radius: 8px;
+            border-radius: 4px; /* Reducido agresivamente de 6px */
             text-decoration: none;
             font-weight: 600;
-            margin-top: 0.7em;
+            margin-top: 0.3em; /* Reducido agresivamente de 0.5em */
+            font-size: 0.7em; /* Reducido agresivamente de 0.85em */
         }
 
         .download-link:hover {
@@ -108,20 +141,67 @@
         }
 
         .qr-wrapper {
-            margin-top: 0.8em;
+            margin-top: 0.3em; /* Reducido agresivamente de 0.6em */
             display: inline-flex;
             flex-direction: column;
             align-items: center;
-            gap: 0.35em;
+            gap: 0.1em; /* Reducido agresivamente de 0.25em */
             background: rgba(0, 63, 114, 0.04);
-            padding: 0.65em;
-            border-radius: 9px;
+            padding: 0.3em; /* Reducido agresivamente de 0.5em */
+            border-radius: 4px; /* Reducido agresivamente de 7px */
             border: 1px solid rgba(0, 63, 114, 0.12);
         }
 
         .qr-wrapper img {
-            width: 130px;
-            height: 130px;
+            width: 80px; /* Reducido agresivamente de 110px */
+            height: 80px; /* Reducido agresivamente de 110px */
+        }
+
+        /* Reducir espaciado en contenedores de fondo AGRESIVAMENTE */
+        .reveal section > div[style*="padding: 2em"] {
+            padding: 0.6em !important; /* Reducido agresivamente de 1.2em */
+        }
+
+        .reveal section > div[style*="padding: 1.5em"] {
+            padding: 0.4em !important; /* Reducido agresivamente de 1em */
+        }
+
+        /* Reducir márgenes generales AGRESIVAMENTE */
+        .reveal section > div[style*="margin: 2em"] {
+            margin: 0.6em 0 !important; /* Reducido agresivamente de 1.2em */
+        }
+
+        .reveal section > div[style*="margin: 1.5em"] {
+            margin: 0.4em 0 !important; /* Reducido agresivamente de 1em */
+        }
+
+        /* Código MÁS compacto */
+        .reveal pre {
+            font-size: 0.35em; /* Reducido agresivamente de 0.45em */
+            line-height: 1.1; /* Reducido agresivamente de 1.3 */
+            margin: 0.3em 0; /* Reducir márgenes del código */
+        }
+
+        .reveal code {
+            font-size: 0.65em; /* Reducido agresivamente de 0.8em */
+        }
+
+        /* Reducir espaciado entre elementos */
+        .reveal section > * {
+            margin-bottom: 0.3em !important; /* Reducir espaciado general */
+        }
+
+        .reveal ul, .reveal ol {
+            margin: 0.2em 0; /* Reducir márgenes de listas */
+        }
+
+        .reveal li {
+            margin-bottom: 0.1em; /* Reducir espaciado entre items */
+        }
+
+        /* Reducir títulos inline */
+        .reveal section h2, .reveal section h3 {
+            margin-bottom: 0.3em !important; /* Reducir margen inferior de títulos */
         }
 
         @media (max-width: 1024px) {
@@ -132,19 +212,19 @@
         }
 
         .reveal section {
-            max-width: 900px;
+            max-width: 1000px; /* Aumentado agresivamente de 950px */
             margin: 0 auto !important;
         }
 
         @media (max-width: 1180px) {
             .reveal section {
-                max-width: 85vw;
+                max-width: 95vw; /* Aumentado agresivamente de 90vw */
             }
         }
 
         @media (max-width: 768px) {
             .reveal .slides {
-                font-size: 28px;
+                font-size: 20px; /* Reducido agresivamente de 24px */
             }
         }
     </style>
@@ -185,123 +265,1847 @@
 
             <!-- Funciones -->
             <section>
-                <h2>1. Funciones en programación</h2>
-                <div class="concept-grid">
-                    <div class="concept-card">
-                        <h3><i class="fa-solid fa-dna"></i> Definición</h3>
-                        <p>Bloques reutilizables que encapsulan lógica. Pueden provenir del lenguaje,
-                            bibliotecas o ser creadas por la persona que programa.</p>
+                <section>
+                    <h2>1. Funciones en programación</h2>
+                    <div class="info-card">
+                        <strong>Exploraremos:</strong> Definición, sintaxis en JavaScript y efectos secundarios
                     </div>
-                    <div class="concept-card">
-                        <h3><i class="fa-solid fa-code"></i> Sintaxis (Python)</h3>
-<pre><code class="language-python">def saludar(nombre):
-    return f"Hola {nombre}"</code></pre>
-                        <p>Uso: <code>saludar("Ana")</code>. La palabra clave <code>return</code> entrega
-                            resultados.</p>
-                    </div>
-                    <div class="concept-card">
-                        <h3><i class="fa-solid fa-diagram-project"></i> Efectos</h3>
-                        <p>A diferencia de las funciones matemáticas, pueden producir efectos como imprimir,
-                            escribir archivos o cambiar variables externas.</p>
-                    </div>
-                </div>
-            </section>
+                    <p style="margin-top: 1.5em; font-size: 1.1em; text-align: center;">
+                        <i class="fa-solid fa-arrow-down" style="color: var(--uide-primary);"></i>
+                        Navega con las flechas para ver cada concepto
+                    </p>
+                </section>
 
-            <!-- Funciones vs métodos -->
-            <section>
-                <h2>Función vs. método</h2>
-                <div class="side-by-side">
+                <!-- Definición -->
+                <section>
+                    <h2><i class="fa-solid fa-dna"></i> Definición</h2>
+                    <div style="text-align: center; margin: 2em 0;">
+                        <div style="background: rgba(0,63,114,0.1); padding: 2em; border-radius: 15px; border: 2px solid var(--uide-primary);">
+                            <h3 style="color: var(--uide-primary); margin-bottom: 1em;">¿Qué es una función?</h3>
+                            <p style="font-size: 1.2em; line-height: 1.6;">
+                                Bloques reutilizables de código que encapsulan lógica específica
+                            </p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <strong>Tipos de funciones:</strong> Del lenguaje, de bibliotecas y creadas por el programador
+                    </div>
+                    <p style="margin-top: 1.5em; font-size: 1.1em; text-align: center;">
+                        <i class="fa-solid fa-arrow-down" style="color: var(--uide-primary);"></i>
+                        Explora cada tipo de función
+                    </p>
+                </section>
+
+                <!-- Del lenguaje -->
+                <section>
+                    <h2><i class="fa-solid fa-language"></i> Funciones del lenguaje</h2>
+                    <div style="text-align: center; margin: 2em 0;">
+                        <div style="background: rgba(52, 152, 219, 0.1); padding: 2em; border-radius: 15px; border: 2px solid #3498db;">
+                            <h3 style="color: #3498db; margin-bottom: 1em;">Built-in Functions</h3>
+                            <p style="font-size: 1.1em;">
+                                Funciones que vienen integradas en JavaScript, listas para usar
+                            </p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <strong>Categorías principales:</strong> Console, Math, Array y String
+                    </div>
+                    <p style="margin-top: 1.5em; font-size: 1.1em; text-align: center;">
+                        <i class="fa-solid fa-arrow-down" style="color: var(--uide-primary);"></i>
+                        Explora cada categoría de funciones built-in
+                    </p>
+                </section>
+
+                <!-- Console y Math -->
+                <section>
+                    <h2><i class="fa-solid fa-terminal"></i> Console y <i class="fa-solid fa-calculator"></i> Math</h2>
+                    
+                    <!-- Console -->
+                    <div class="concept-card" style="margin-bottom: 2em;">
+                        <h3><i class="fa-solid fa-terminal"></i> Console - Depuración y logging</h3>
+                        <p style="margin-bottom: 1em;">Funciones para mostrar información en la consola del navegador o terminal</p>
+<pre><code class="language-javascript">// Tipos básicos de mensajes
+console.log("Información general");
+console.info("Mensaje informativo");
+console.warn("Advertencia importante");
+console.error("Error crítico");
+
+// Logging avanzado
+console.table([
+    { nombre: "Ana", edad: 25 },
+    { nombre: "Luis", edad: 30 }
+]);
+
+console.group("Grupo de mensajes");
+console.log("Mensaje 1");
+console.log("Mensaje 2");
+console.groupEnd();
+
+// Medición de tiempo
+console.time("operacion");
+// ... código a medir ...
+console.timeEnd("operacion"); // "operacion: 1.234ms"
+
+// Contar ocurrencias
+console.count("clicks"); // clicks: 1
+console.count("clicks"); // clicks: 2
+
+// Ejemplo práctico: debug de función
+function procesarDatos(datos) {
+    console.log("Iniciando procesamiento de", datos.length, "elementos");
+    console.time("procesamiento");
+    
+    const resultado = datos.map(item => {
+        console.log("Procesando:", item);
+        return item * 2;
+    });
+    
+    console.timeEnd("procesamiento");
+    console.log("Resultado final:", resultado);
+    return resultado;
+}</code></pre>
+                    </div>
+
+                    <!-- Math -->
                     <div class="concept-card">
-                        <h3><i class="fa-solid fa-cube"></i> Función</h3>
-                        <ul>
-                            <li>Independiente del estado de un objeto.</li>
-                            <li>Se invoca como <code>resultado = funcion(arg)</code>.</li>
-                            <li>No requiere parámetro <code>self</code>.</li>
-                        </ul>
+                        <h3><i class="fa-solid fa-calculator"></i> Math - Operaciones matemáticas</h3>
+                        <p style="margin-bottom: 1em;">Funciones matemáticas para cálculos numéricos</p>
+<pre><code class="language-javascript">// Operaciones básicas
+Math.max(5, 10, 3, 8);          // 10 - máximo valor
+Math.min(5, 10, 3, 8);          // 3 - mínimo valor
+Math.abs(-15);                  // 15 - valor absoluto
+
+// Redondeo
+Math.round(4.7);                // 5 - redondeo normal
+Math.ceil(4.1);                 // 5 - redondeo hacia arriba
+Math.floor(4.9);                // 4 - redondeo hacia abajo
+Math.trunc(4.9);                // 4 - elimina decimales
+
+// Potencias y raíces
+Math.pow(2, 3);                 // 8 - 2 elevado a 3
+Math.sqrt(16);                  // 4 - raíz cuadrada
+Math.cbrt(27);                  // 3 - raíz cúbica
+
+// Números aleatorios
+Math.random();                  // 0.123... (entre 0 y 1)
+Math.floor(Math.random() * 10); // 0-9 (entero aleatorio)
+
+// Constantes matemáticas
+Math.PI;                        // 3.14159...
+Math.E;                         // 2.718... (número de Euler)
+
+// Funciones trigonométricas
+Math.sin(Math.PI / 2);          // 1
+Math.cos(0);                    // 1
+
+// Ejemplo práctico: generar número aleatorio en rango
+function numeroAleatorio(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// Ejemplo: calcular distancia entre puntos
+function distancia(x1, y1, x2, y2) {
+    const dx = x2 - x1;
+    const dy = y2 - y1;
+    return Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2));
+}</code></pre>
+                    </div>
+                </section>
+
+                <!-- Array y String -->
+                <section>
+                    <h2><i class="fa-solid fa-list"></i> Array y <i class="fa-solid fa-font"></i> String</h2>
+                    
+                    <!-- Array -->
+                    <div class="concept-card" style="margin-bottom: 2em;">
+                        <h3><i class="fa-solid fa-list"></i> Array - Trabajar con listas</h3>
+                        <p style="margin-bottom: 1em;">Funciones para crear, manipular y transformar arrays</p>
+<pre><code class="language-javascript">// Crear arrays
+Array.from([1, 2, 3]);         // [1, 2, 3] - crear desde iterable
+Array.of(1, 2, 3);             // [1, 2, 3] - crear con elementos
+Array(5).fill(0);              // [0, 0, 0, 0, 0] - crear con valor
+
+// Verificar si es array
+Array.isArray([1, 2, 3]);      // true
+Array.isArray("texto");        // false
+
+// Métodos de modificación
+const numeros = [1, 2, 3];
+numeros.push(4);               // [1, 2, 3, 4] - agregar al final
+numeros.pop();                 // [1, 2, 3] - quitar del final
+numeros.unshift(0);            // [0, 1, 2, 3] - agregar al inicio
+numeros.shift();               // [1, 2, 3] - quitar del inicio
+
+// Métodos de transformación (funcionales)
+const duplicados = numeros.map(x => x * 2);        // [2, 4, 6]
+const pares = numeros.filter(x => x % 2 === 0);    // [2]
+const suma = numeros.reduce((acc, x) => acc + x, 0); // 6
+
+// Búsqueda y verificación
+numeros.includes(2);           // true - contiene elemento
+numeros.indexOf(2);            // 1 - posición del elemento
+numeros.find(x => x > 2);      // 3 - primer elemento que cumple
+numeros.some(x => x > 5);      // false - alguno cumple
+numeros.every(x => x > 0);     // true - todos cumplen
+
+// Ejemplo práctico: procesar lista de productos
+const productos = [
+    { nombre: "Laptop", precio: 1000, categoria: "tech" },
+    { nombre: "Mouse", precio: 25, categoria: "tech" },
+    { nombre: "Libro", precio: 15, categoria: "educacion" }
+];
+
+const productosCaros = productos
+    .filter(p => p.precio > 50)
+    .map(p => ({ ...p, conDescuento: p.precio * 0.9 }));
+</code></pre>
+                    </div>
+
+                    <!-- String -->
+                    <div class="concept-card">
+                        <h3><i class="fa-solid fa-font"></i> String - Manipular texto</h3>
+                        <p style="margin-bottom: 1em;">Funciones para trabajar con cadenas de texto</p>
+<pre><code class="language-javascript">// Transformaciones básicas
+"Hola Mundo".toUpperCase();    // "HOLA MUNDO"
+"Hola Mundo".toLowerCase();    // "hola mundo"
+"  espacios  ".trim();         // "espacios" - quita espacios
+
+// Búsqueda y verificación
+"JavaScript".includes("Script"); // true - contiene subcadena
+"JavaScript".startsWith("Java"); // true - empieza con
+"JavaScript".endsWith("Script"); // true - termina con
+"JavaScript".indexOf("Script");  // 4 - posición de subcadena
+
+// Extracción de partes
+"JavaScript".slice(0, 4);       // "Java" - extraer porción
+"JavaScript".substring(4, 10);  // "Script" - extraer entre índices
+"JavaScript".charAt(0);         // "J" - carácter en posición
+
+// Reemplazo y división
+"Hola Mundo".replace("Mundo", "JavaScript"); // "Hola JavaScript"
+"a,b,c,d".split(",");          // ["a", "b", "c", "d"]
+["a", "b", "c"].join("-");     // "a-b-c"
+
+// Repetición y relleno
+"Hola".repeat(3);              // "HolaHolaHola"
+"5".padStart(3, "0");          // "005" - rellenar al inicio
+"5".padEnd(3, "0");            // "500" - rellenar al final
+
+// Template literals (plantillas)
+const nombre = "Ana";
+const edad = 25;
+const mensaje = `Hola ${nombre}, tienes ${edad} años`;
+
+// Ejemplo práctico: validar y formatear email
+function procesarEmail(email) {
+    const emailLimpio = email.trim().toLowerCase();
+    
+    if (!emailLimpio.includes("@") || !emailLimpio.includes(".")) {
+        return { valido: false, mensaje: "Email inválido" };
+    }
+    
+    const [usuario, dominio] = emailLimpio.split("@");
+    return {
+        valido: true,
+        usuario: usuario,
+        dominio: dominio,
+        emailFormateado: emailLimpio
+    };
+}
+
+// Ejemplo: crear slug para URL
+function crearSlug(titulo) {
+    return titulo
+        .toLowerCase()
+        .trim()
+        .replace(/[^\w\s-]/g, '') // quitar caracteres especiales
+        .replace(/[\s_-]+/g, '-') // reemplazar espacios con guiones
+        .replace(/^-+|-+$/g, ''); // quitar guiones del inicio/final
+}
+// "Mi Artículo Genial!" → "mi-articulo-genial"</code></pre>
+                    </div>
+                </section>
+
+                <!-- De bibliotecas -->
+                <section>
+                    <h2><i class="fa-solid fa-book"></i> Funciones de bibliotecas</h2>
+                    <div style="text-align: center; margin: 2em 0;">
+                        <div style="background: rgba(155, 89, 182, 0.1); padding: 2em; border-radius: 15px; border: 2px solid #9b59b6;">
+                            <h3 style="color: #9b59b6; margin-bottom: 1em;">External Libraries</h3>
+                            <p style="font-size: 1.1em;">
+                                Funciones creadas por otros desarrolladores que podemos importar y usar
+                            </p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <strong>Bibliotecas populares:</strong> Date-fns, Axios, Lodash y Chart.js
+                    </div>
+                    <p style="margin-top: 1.5em; font-size: 1.1em; text-align: center;">
+                        <i class="fa-solid fa-arrow-down" style="color: var(--uide-primary);"></i>
+                        Explora cada biblioteca con ejemplos completos
+                    </p>
+                </section>
+
+                <!-- Date-fns -->
+                <section>
+                    <h2><i class="fa-solid fa-calendar"></i> Date-fns: Manejo de fechas</h2>
+                    <div style="text-align: center; margin: 1.5em 0;">
+                        <div style="background: rgba(52, 152, 219, 0.1); padding: 1.5em; border-radius: 10px;">
+                            <p style="font-size: 1.1em;">
+                                Biblioteca moderna para manipular fechas de forma funcional e inmutable
+                            </p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <strong>Funcionalidades:</strong> Instalación, formateo y operaciones con fechas
+                    </div>
+                    <p style="margin-top: 1.5em; font-size: 1.1em; text-align: center;">
+                        <i class="fa-solid fa-arrow-down" style="color: var(--uide-primary);"></i>
+                        Explora cada funcionalidad de Date-fns
+                    </p>
+                </section>
+
+                <!-- Date-fns: Instalación y formateo -->
+                <section>
+                    <h2><i class="fa-solid fa-download"></i> Instalación y formateo básico</h2>
+                    <div class="side-by-side">
+                        <div class="concept-card">
+                            <h3>Instalación y importación</h3>
+<pre><code class="language-bash"># Instalar con npm
+npm install date-fns
+
+# O con yarn
+yarn add date-fns</code></pre>
+<pre><code class="language-javascript">// Importar funciones específicas (recomendado)
+import { 
+    format, 
+    addDays, 
+    subDays, 
+    isAfter, 
+    differenceInDays 
+} from 'date-fns';
+
+// O importar todo (no recomendado)
+import * as dateFns from 'date-fns';</code></pre>
+                        </div>
+                        <div class="concept-card">
+                            <h3>Formateo básico de fechas</h3>
+<pre><code class="language-javascript">const ahora = new Date();
+
+// Formatos comunes
+format(ahora, 'dd/MM/yyyy');        // "23/10/2024"
+format(ahora, 'yyyy-MM-dd');        // "2024-10-23"
+format(ahora, 'dd-MM-yy');          // "23-10-24"
+
+// Con hora
+format(ahora, 'dd/MM/yyyy HH:mm');  // "23/10/2024 14:30"
+format(ahora, 'HH:mm:ss');          // "14:30:45"</code></pre>
+                        </div>
+                    </div>
+                    <div class="example-note">
+                        <strong>Próximo:</strong> Explora formatos avanzados y personalizados con locales
+                    </div>
+                </section>
+
+                <!-- Date-fns: Formateo avanzado -->
+                <section>
+                    <h2><i class="fa-solid fa-magic"></i> Formateo avanzado y personalizado</h2>
+                    <div style="text-align: center; margin: 1.5em 0;">
+                        <div style="background: rgba(155, 89, 182, 0.1); padding: 1.5em; border-radius: 10px;">
+                            <p style="font-size: 1.1em;">
+                                Formatos personalizados, locales y patrones avanzados para mostrar fechas
+                            </p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <strong>Temas avanzados:</strong> Formatos con texto personalizado y soporte de idiomas
+                    </div>
+                    <p style="margin-top: 1.5em; font-size: 1.1em; text-align: center;">
+                        <i class="fa-solid fa-arrow-down" style="color: var(--uide-primary);"></i>
+                        Explora cada técnica de formateo avanzado
+                    </p>
+                </section>
+
+                <!-- Formatos con texto personalizado -->
+                <section>
+                    <h2><i class="fa-solid fa-edit"></i> Formatos con texto personalizado</h2>
+                    <div style="text-align: center; margin: 1.5em 0;">
+                        <div style="background: rgba(46, 204, 113, 0.1); padding: 1.5em; border-radius: 10px;">
+                            <p style="font-size: 1.1em;">
+                                Crear formatos descriptivos con texto libre y patrones predefinidos
+                            </p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <strong>Tipos de formatos:</strong> Descriptivos básicos, con hora, relativos predefinidos y ejemplos prácticos
+                    </div>
+                    <p style="margin-top: 1.5em; font-size: 1.1em; text-align: center;">
+                        <i class="fa-solid fa-arrow-down" style="color: var(--uide-primary);"></i>
+                        Explora cada tipo de formato personalizado
+                    </p>
+                </section>
+
+                <!-- Formatos descriptivos básicos -->
+                <section>
+                    <h2><i class="fa-solid fa-text-width"></i> Formatos descriptivos básicos</h2>
+                    <div style="text-align: center; margin: 1.5em 0;">
+                        <div style="background: rgba(52, 152, 219, 0.1); padding: 1.5em; border-radius: 10px;">
+                            <p style="font-size: 1.1em;">
+                                Formatos con texto libre y descripciones naturales
+                            </p>
+                        </div>
+                    </div>
+                    <div class="concept-card" style="margin-bottom: 2em;">
+                        <h3>Formatos descriptivos con texto libre</h3>
+<pre><code class="language-javascript">const fecha = new Date('2024-10-23T14:30:00');
+
+// Formatos descriptivos básicos
+format(fecha, 'MMMM do, yyyy');         // "October 23rd, 2024"
+format(fecha, 'EEEE, MMMM do');         // "Wednesday, October 23rd"
+format(fecha, "'Hoy es' EEEE");         // "Hoy es Wednesday"
+format(fecha, "'El' do 'de' MMMM");     // "El 23rd de October"
+
+// Formatos con texto personalizado
+format(fecha, "'Fecha de publicación:' dd/MM/yyyy");
+// "Fecha de publicación: 23/10/2024"
+
+format(fecha, "'Artículo creado el' EEEE, dd 'de' MMMM");
+// "Artículo creado el Wednesday, 23 de October"
+
+format(fecha, "'Último acceso:' dd/MM/yyyy");
+// "Último acceso: 23/10/2024"</code></pre>
                     </div>
                     <div class="concept-card">
-                        <h3><i class="fa-solid fa-cubes"></i> Método</h3>
-                        <ul>
-                            <li>Asociado a datos/objetos concretos.</li>
-                            <li>Se invoca como <code>dato.metodo(arg)</code>.</li>
-                            <li>Recibe <code>self</code> para acceder al estado.</li>
-                        </ul>
+                        <h3>Formatos para diferentes contextos</h3>
+<pre><code class="language-javascript">// Contextos de aplicación web
+format(fecha, "'Creado el' dd/MM/yyyy 'a las' HH:mm"); 
+// "Creado el 23/10/2024 a las 14:30"
+
+format(fecha, "'Última actualización:' EEEE, dd 'de' MMMM"); 
+// "Última actualización: Wednesday, 23 de October"
+
+format(fecha, "'Registro del' dd 'de' MMMM 'de' yyyy");
+// "Registro del 23 de October de 2024"
+
+// Contextos de e-commerce
+format(fecha, "'Pedido realizado el' dd/MM/yyyy");
+// "Pedido realizado el 23/10/2024"
+
+format(fecha, "'Entrega estimada:' EEEE dd/MM");
+// "Entrega estimada: Wednesday 23/10"
+
+// Contextos de blog/noticias
+format(fecha, "'Publicado el' dd 'de' MMMM");
+// "Publicado el 23 de October"
+
+format(fecha, "'Noticia del' EEEE dd/MM/yyyy");
+// "Noticia del Wednesday 23/10/2024"</code></pre>
                     </div>
-                </div>
-                <div class="example-note">
-                    En PF buscamos funciones desacopladas del estado para facilitar pruebas y reutilización.
-                </div>
+                </section>
+
+                <!-- Formatos con hora -->
+                <section>
+                    <h2><i class="fa-solid fa-clock"></i> Formatos con hora descriptiva</h2>
+                    <div style="text-align: center; margin: 1.5em 0;">
+                        <div style="background: rgba(155, 89, 182, 0.1); padding: 1.5em; border-radius: 10px;">
+                            <p style="font-size: 1.1em;">
+                                Combinar fechas con información de tiempo de forma natural
+                            </p>
+                        </div>
+                    </div>
+                    <div class="concept-card" style="margin-bottom: 2em;">
+                        <h3>Formatos básicos con hora</h3>
+<pre><code class="language-javascript">const fecha = new Date('2024-10-23T14:30:00');
+
+// Formatos con hora descriptiva
+format(fecha, "'A las' HH:mm 'horas'"); // "A las 14:30 horas"
+format(fecha, "h:mm a 'del' dd/MM");    // "2:30 PM del 23/10"
+format(fecha, "'Reunión el' dd/MM 'a las' HH:mm"); // "Reunión el 23/10 a las 14:30"
+
+// Formatos de 12 horas vs 24 horas
+format(fecha, "'Cita programada a las' h:mm a");    // "Cita programada a las 2:30 PM"
+format(fecha, "'Evento a las' HH:mm 'hrs'");        // "Evento a las 14:30 hrs"
+
+// Formatos con segundos
+format(fecha, "'Timestamp:' HH:mm:ss");             // "Timestamp: 14:30:00"
+format(fecha, "'Hora exacta:' h:mm:ss a");          // "Hora exacta: 2:30:00 PM"</code></pre>
+                    </div>
+                    <div class="concept-card">
+                        <h3>Formatos para eventos y citas</h3>
+<pre><code class="language-javascript">// Formatos para calendarios
+format(fecha, "'Reunión programada para el' EEEE dd/MM 'a las' HH:mm");
+// "Reunión programada para el Wednesday 23/10 a las 14:30"
+
+format(fecha, "'Cita médica:' dd 'de' MMMM 'a las' h:mm a");
+// "Cita médica: 23 de October a las 2:30 PM"
+
+// Formatos para recordatorios
+format(fecha, "'Recordatorio:' EEEE dd/MM 'a las' HH:mm");
+// "Recordatorio: Wednesday 23/10 a las 14:30"
+
+format(fecha, "'Alarma configurada para las' h:mm a 'del' dd/MM");
+// "Alarma configurada para las 2:30 PM del 23/10"
+
+// Formatos para logs y sistemas
+format(fecha, "'[' HH:mm:ss '] Evento del' dd/MM/yyyy");
+// "[14:30:00] Evento del 23/10/2024"
+
+format(fecha, "'Sistema iniciado el' dd/MM/yyyy 'a las' HH:mm");
+// "Sistema iniciado el 23/10/2024 a las 14:30"</code></pre>
+                    </div>
+                </section>
+
+                <!-- Formatos relativos predefinidos -->
+                <section>
+                    <h2><i class="fa-solid fa-magic"></i> Formatos relativos predefinidos</h2>
+                    <div style="text-align: center; margin: 1.5em 0;">
+                        <div style="background: rgba(230, 126, 34, 0.1); padding: 1.5em; border-radius: 10px;">
+                            <p style="font-size: 1.1em;">
+                                Patrones predefinidos de Date-fns para formateo rápido
+                            </p>
+                        </div>
+                    </div>
+                    <div class="concept-card" style="margin-bottom: 2em;">
+                        <h3>Patrones PPP predefinidos</h3>
+<pre><code class="language-javascript">const fecha = new Date('2024-10-23T14:30:00');
+
+// Formatos relativos predefinidos (más fáciles de usar)
+format(fecha, 'P');                     // "10/23/2024" - Fecha corta
+format(fecha, 'PP');                    // "Oct 23, 2024" - Fecha media
+format(fecha, 'PPP');                   // "October 23rd, 2024" - Fecha larga
+format(fecha, 'PPPP');                  // "Wednesday, October 23rd, 2024" - Fecha completa
+
+// Formatos de tiempo
+format(fecha, 'p');                     // "2:30 PM" - Hora corta
+format(fecha, 'pp');                    // "2:30:00 PM" - Hora con segundos
+format(fecha, 'ppp');                   // "2:30:00 PM GMT-5" - Hora con zona
+format(fecha, 'pppp');                  // "2:30:00 PM GMT-05:00" - Hora completa
+
+// Combinaciones fecha + hora
+format(fecha, 'Pp');                    // "10/23/2024, 2:30 PM"
+format(fecha, 'PPp');                   // "Oct 23, 2024, 2:30 PM"
+format(fecha, 'PPPp');                  // "October 23rd, 2024 at 2:30 PM"
+format(fecha, 'PPPPp');                 // "Wednesday, October 23rd, 2024 at 2:30 PM"</code></pre>
+                    </div>
+                    <div class="concept-card">
+                        <h3>Cuándo usar cada patrón</h3>
+<pre><code class="language-javascript">// Para interfaces compactas
+const fechaCorta = format(fecha, 'P');        // "10/23/2024"
+const horaCorta = format(fecha, 'p');         // "2:30 PM"
+
+// Para listas y tablas
+const fechaMedia = format(fecha, 'PP');       // "Oct 23, 2024"
+const fechaHoraMedia = format(fecha, 'PPp');  // "Oct 23, 2024, 2:30 PM"
+
+// Para artículos y contenido
+const fechaLarga = format(fecha, 'PPP');      // "October 23rd, 2024"
+const fechaHoraLarga = format(fecha, 'PPPp'); // "October 23rd, 2024 at 2:30 PM"
+
+// Para documentos formales
+const fechaCompleta = format(fecha, 'PPPP');  // "Wednesday, October 23rd, 2024"
+
+// Ejemplos de uso en componentes
+const ComponenteFecha = ({ fecha, tipo }) => {
+    const formatos = {
+        corta: 'P',
+        media: 'PP', 
+        larga: 'PPP',
+        completa: 'PPPP'
+    };
+    return format(fecha, formatos[tipo] || 'PPP');
+};</code></pre>
+                    </div>
+                </section>
+
+                <!-- Ejemplos prácticos -->
+                <section>
+                    <h2><i class="fa-solid fa-code"></i> Ejemplos prácticos para interfaces</h2>
+                    <div style="text-align: center; margin: 1.5em 0;">
+                        <div style="background: rgba(231, 76, 60, 0.1); padding: 1.5em; border-radius: 10px;">
+                            <p style="font-size: 1.1em;">
+                                Funciones reutilizables para casos de uso comunes
+                            </p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <strong>Tipos de ejemplos:</strong> Funciones básicas para notificaciones/eventos y formatos condicionales dinámicos
+                    </div>
+                    <p style="margin-top: 1.5em; font-size: 1.1em; text-align: center;">
+                        <i class="fa-solid fa-arrow-down" style="color: var(--uide-primary);"></i>
+                        Explora ejemplos prácticos para implementar
+                    </p>
+                </section>
+
+                <!-- Funciones básicas -->
+                <section>
+                    <h2><i class="fa-solid fa-bell"></i> Funciones básicas</h2>
+                    <div style="text-align: center; margin: 1.5em 0;">
+                        <div style="background: rgba(52, 152, 219, 0.1); padding: 1.5em; border-radius: 10px;">
+                            <p style="font-size: 1.1em;">
+                                Funciones fundamentales para mostrar fechas en aplicaciones
+                            </p>
+                        </div>
+                    </div>
+                    <div class="concept-card" style="margin-bottom: 2em;">
+                        <h3>Funciones esenciales</h3>
+<pre><code class="language-javascript">// Funciones básicas
+const formatoNotificacion = (fecha) => {
+    return format(fecha, "'Notificación recibida el' dd/MM 'a las' HH:mm");
+};
+
+const formatoEvento = (fecha) => {
+    return format(fecha, "'Evento programado para el' EEEE dd 'de' MMMM 'a las' HH:mm");
+};
+
+const formatoVencimiento = (fecha) => {
+    return format(fecha, "'Vence el' dd/MM/yyyy 'a las' HH:mm");
+};
+
+// Uso en componentes
+console.log(formatoNotificacion(new Date()));
+// "Notificación recibida el 23/10 a las 14:30"
+
+console.log(formatoEvento(new Date()));
+// "Evento programado para el Wednesday 23 de October a las 14:30"
+
+console.log(formatoVencimiento(new Date()));
+// "Vence el 23/10/2024 a las 14:30"</code></pre>
+                    </div>
+                    <div class="concept-card">
+                        <h3>Funciones adicionales</h3>
+<pre><code class="language-javascript">// Funciones complementarias
+const formatoPublicacion = (fecha) => {
+    return format(fecha, "'Publicado el' dd 'de' MMMM 'a las' HH:mm");
+};
+
+const formatoComentario = (fecha) => {
+    const ahora = new Date();
+    const minutos = differenceInMinutes(ahora, fecha);
+    
+    if (minutos < 1) return "Hace un momento";
+    if (minutos < 60) return `Hace ${minutos} minutos`;
+    return format(fecha, "dd/MM 'a las' HH:mm");
+};
+
+const formatoMensaje = (fecha) => {
+    const hoy = new Date();
+    const esHoy = isSameDay(fecha, hoy);
+    
+    if (esHoy) {
+        return format(fecha, "HH:mm");
+    } else {
+        return format(fecha, "dd/MM");
+    }
+};
+
+const formatoReunion = (fechaInicio, fechaFin) => {
+    const inicio = format(fechaInicio, "dd/MM 'a las' HH:mm");
+    const fin = format(fechaFin, "HH:mm");
+    return `Reunión del ${inicio} hasta las ${fin}`;
+};
+
+// Ejemplos de uso
+console.log(formatoPublicacion(new Date()));
+// "Publicado el 23 de October a las 14:30"
+
+console.log(formatoComentario(subMinutes(new Date(), 5)));
+// "Hace 5 minutos"
+
+console.log(formatoMensaje(new Date()));
+// "14:30"</code></pre>
+                    </div>
+                </section>
+
+                <!-- Funciones e-commerce y sistemas -->
+                <section>
+                    <h2><i class="fa-solid fa-shopping-cart"></i> Funciones para e-commerce y sistemas</h2>
+                    <div style="text-align: center; margin: 1.5em 0;">
+                        <div style="background: rgba(46, 204, 113, 0.1); padding: 1.5em; border-radius: 10px;">
+                            <p style="font-size: 1.1em;">
+                                Formatos especializados para comercio electrónico y sistemas de gestión
+                            </p>
+                        </div>
+                    </div>
+                    <div class="concept-card" style="margin-bottom: 2em;">
+                        <h3>Funciones para e-commerce</h3>
+<pre><code class="language-javascript">// Funciones para e-commerce
+const formatoPedido = (fecha) => {
+    return format(fecha, "'Pedido #' yyyyMMdd '-' HHmmss ' realizado el' dd/MM/yyyy");
+};
+
+const formatoEntrega = (fecha) => {
+    return format(fecha, "'Entrega estimada:' EEEE dd 'de' MMMM");
+};
+
+const formatoFactura = (fecha) => {
+    return format(fecha, "'Factura del' dd/MM/yyyy ' - ' HH:mm");
+};
+
+const formatoOferta = (fechaInicio, fechaFin) => {
+    const inicio = format(fechaInicio, "dd/MM");
+    const fin = format(fechaFin, "dd/MM 'a las' HH:mm");
+    return `Oferta válida del ${inicio} hasta el ${fin}`;
+};
+
+const formatoDevolucion = (fecha, dias = 30) => {
+    const limite = addDays(fecha, dias);
+    return format(limite, "'Devolución hasta el' dd 'de' MMMM");
+};
+
+// Ejemplos de uso
+console.log(formatoPedido(new Date()));
+// "Pedido #20241023-143000 realizado el 23/10/2024"
+
+console.log(formatoEntrega(addDays(new Date(), 3)));
+// "Entrega estimada: Saturday 26 de October"
+
+console.log(formatoOferta(new Date(), addDays(new Date(), 7)));
+// "Oferta válida del 23/10 hasta el 30/10 a las 14:30"</code></pre>
+                    </div>
+                    <div class="concept-card">
+                        <h3>Funciones para sistemas de gestión</h3>
+<pre><code class="language-javascript">// Funciones para sistemas de gestión
+const formatoLog = (fecha, nivel) => {
+    return format(fecha, `'[' yyyy-MM-dd HH:mm:ss '] ${nivel.toUpperCase()}:'`);
+};
+
+const formatoAuditoria = (fecha, usuario) => {
+    return format(fecha, `'Modificado por ${usuario} el' dd/MM/yyyy 'a las' HH:mm`);
+};
+
+const formatoBackup = (fecha) => {
+    return format(fecha, "'backup_' yyyyMMdd '_' HHmmss '.sql'");
+};
+
+const formatoReporte = (fecha, tipo) => {
+    return format(fecha, `'${tipo}_reporte_' yyyy-MM-dd '.pdf'`);
+};
+
+const formatoSesion = (fechaInicio, fechaFin) => {
+    const duracion = differenceInMinutes(fechaFin, fechaInicio);
+    const inicio = format(fechaInicio, "HH:mm");
+    return `Sesión de ${duracion} min (${inicio})`;
+};
+
+// Funciones para monitoreo
+const formatoUptime = (fechaInicio) => {
+    const ahora = new Date();
+    const dias = differenceInDays(ahora, fechaInicio);
+    const horas = differenceInHours(ahora, fechaInicio) % 24;
+    return `Sistema activo: ${dias}d ${horas}h`;
+};
+
+// Ejemplos de uso
+console.log(formatoLog(new Date(), 'error'));
+// "[2024-10-23 14:30:00] ERROR:"
+
+console.log(formatoAuditoria(new Date(), 'admin'));
+// "Modificado por admin el 23/10/2024 a las 14:30"
+
+console.log(formatoBackup(new Date()));
+// "backup_20241023_143000.sql"
+
+console.log(formatoUptime(subDays(new Date(), 15)));
+// "Sistema activo: 15d 0h"</code></pre>
+                    </div>
+                </section>
+
+                <!-- Formatos condicionales -->
+                <section>
+                    <h2><i class="fa-solid fa-brain"></i> Formatos condicionales y dinámicos</h2>
+                    <div style="text-align: center; margin: 1.5em 0;">
+                        <div style="background: rgba(155, 89, 182, 0.1); padding: 1.5em; border-radius: 10px;">
+                            <p style="font-size: 1.1em;">
+                                Formatos que se adaptan automáticamente según el contexto y condiciones
+                            </p>
+                        </div>
+                    </div>
+                    <div class="concept-card" style="margin-bottom: 2em;">
+                        <h3>Formatos según tiempo y proximidad</h3>
+<pre><code class="language-javascript">// Formato condicional según el momento del día
+const formatoSaludo = (fecha) => {
+    const hora = fecha.getHours();
+    const saludo = hora < 12 ? 'Buenos días' : hora < 18 ? 'Buenas tardes' : 'Buenas noches';
+    return format(fecha, `'${saludo}, hoy es' EEEE dd 'de' MMMM`);
+};
+
+// Formato según la proximidad de la fecha
+const formatoProximidad = (fecha) => {
+    const ahora = new Date();
+    const diferenciaDias = differenceInDays(fecha, ahora);
+    
+    if (diferenciaDias === 0) {
+        return format(fecha, "'Hoy a las' HH:mm");
+    } else if (diferenciaDias === 1) {
+        return format(fecha, "'Mañana a las' HH:mm");
+    } else if (diferenciaDias === -1) {
+        return format(fecha, "'Ayer a las' HH:mm");
+    } else if (diferenciaDias > 0 && diferenciaDias <= 7) {
+        return format(fecha, "EEEE 'a las' HH:mm");
+    } else {
+        return format(fecha, "dd/MM/yyyy 'a las' HH:mm");
+    }
+};
+
+// Formato según el estado del evento
+const formatoEstadoEvento = (fecha, estado) => {
+    const base = format(fecha, "dd/MM/yyyy 'a las' HH:mm");
+    const estados = {
+        pendiente: `Programado para el ${base}`,
+        activo: `En curso desde el ${base}`,
+        completado: `Finalizado el ${base}`,
+        cancelado: `Cancelado (era el ${base})`
+    };
+    return estados[estado] || base;
+};</code></pre>
+                    </div>
+                    <div class="concept-card">
+                        <h3>Sistemas de formatos contextuales</h3>
+<pre><code class="language-javascript">// Sistema de formatos para diferentes contextos
+const formatosContextuales = {
+    chat: (fecha) => format(fecha, 'HH:mm'),
+    lista: (fecha) => format(fecha, 'dd/MM/yyyy'),
+    detalle: (fecha) => format(fecha, "EEEE, dd 'de' MMMM 'de' yyyy 'a las' HH:mm"),
+    compacto: (fecha) => format(fecha, 'dd/MM HH:mm'),
+    movil: (fecha) => format(fecha, 'dd/MM'),
+    tablet: (fecha) => format(fecha, 'dd MMM yyyy'),
+    desktop: (fecha) => format(fecha, "dd 'de' MMMM 'de' yyyy")
+};
+
+// Formato adaptativo según el dispositivo
+const formatoResponsivo = (fecha) => {
+    const ancho = window.innerWidth;
+    if (ancho < 768) return formatosContextuales.movil(fecha);
+    if (ancho < 1024) return formatosContextuales.tablet(fecha);
+    return formatosContextuales.desktop(fecha);
+};
+
+// Formato según la urgencia
+const formatoUrgencia = (fecha) => {
+    const ahora = new Date();
+    const horasRestantes = differenceInHours(fecha, ahora);
+    
+    if (horasRestantes < 1) {
+        return format(fecha, "'¡URGENTE! En' mm 'minutos'");
+    } else if (horasRestantes < 24) {
+        return format(fecha, "'Hoy a las' HH:mm");
+    } else if (horasRestantes < 48) {
+        return format(fecha, "'Mañana a las' HH:mm");
+    } else {
+        return format(fecha, "dd/MM 'a las' HH:mm");
+    }
+};
+
+// Uso en componentes React/Vue
+const ComponenteFechaInteligente = ({ fecha, contexto = 'detalle' }) => {
+    return formatosContextuales[contexto]?.(fecha) || format(fecha, 'PPP');
+};</code></pre>
+                    </div>
+                </section>
+
+                <!-- Soporte de locales -->
+                <section>
+                    <h2><i class="fa-solid fa-globe"></i> Soporte de locales (idiomas)</h2>
+                    <div style="text-align: center; margin: 1.5em 0;">
+                        <div style="background: rgba(231, 76, 60, 0.1); padding: 1.5em; border-radius: 10px;">
+                            <p style="font-size: 1.1em;">
+                                Mostrar fechas en diferentes idiomas y culturas del mundo
+                            </p>
+                        </div>
+                    </div>
+                    <div class="concept-card" style="margin-bottom: 2em;">
+                        <h3>Importación y uso de locales</h3>
+<pre><code class="language-javascript">// Importar locales específicos
+import { es, fr, de, it, pt, enUS } from 'date-fns/locale';
+
+const fecha = new Date('2024-10-23T14:30:00');
+
+// Español (España/Latinoamérica)
+format(fecha, 'EEEE, d \'de\' MMMM \'de\' yyyy', { locale: es }); 
+// "miércoles, 23 de octubre de 2024"
+
+format(fecha, 'PPP', { locale: es });
+// "23 de octubre de 2024"
+
+format(fecha, "'Publicado el' dd \'de\' MMMM", { locale: es });
+// "Publicado el 23 de octubre"
+
+// Francés
+format(fecha, 'EEEE d MMMM yyyy', { locale: fr });
+// "mercredi 23 octobre 2024"
+
+format(fecha, "'Publié le' d MMMM yyyy", { locale: fr });
+// "Publié le 23 octobre 2024"
+
+// Alemán
+format(fecha, 'EEEE, d. MMMM yyyy', { locale: de });
+// "Mittwoch, 23. Oktober 2024"
+
+// Italiano
+format(fecha, 'EEEE d MMMM yyyy', { locale: it });
+// "mercoledì 23 ottobre 2024"
+
+// Portugués
+format(fecha, 'EEEE, d \'de\' MMMM \'de\' yyyy', { locale: pt });
+// "quarta-feira, 23 de outubro de 2024"</code></pre>
+                    </div>
+                    <div class="concept-card">
+                        <h3>Configuración global y ejemplos prácticos</h3>
+<pre><code class="language-javascript">// Configurar locale por defecto para toda la aplicación
+import { setDefaultOptions } from 'date-fns';
+setDefaultOptions({ locale: es });
+
+// Ahora todos los formatos usarán español por defecto
+format(new Date(), 'PPP'); // "23 de octubre de 2024"
+format(new Date(), 'PPPP'); // "miércoles, 23 de octubre de 2024"
+
+// Función para detectar idioma del usuario
+const obtenerLocale = (idioma) => {
+    const locales = {
+        'es': es,
+        'fr': fr,
+        'de': de,
+        'it': it,
+        'pt': pt,
+        'en': enUS
+    };
+    return locales[idioma] || es; // español por defecto
+};
+
+// Función multiidioma para interfaces
+const formatoMultiidioma = (fecha, idioma = 'es') => {
+    const locale = obtenerLocale(idioma);
+    return format(fecha, 'PPP', { locale });
+};
+
+// Ejemplos de uso
+console.log(formatoMultiidioma(new Date(), 'es')); // "23 de octubre de 2024"
+console.log(formatoMultiidioma(new Date(), 'fr')); // "23 octobre 2024"
+console.log(formatoMultiidioma(new Date(), 'de')); // "23. Oktober 2024"
+
+// Sistema de fechas para aplicación internacional
+const sistemaFechas = {
+    formatoCorto: (fecha, idioma) => format(fecha, 'P', { locale: obtenerLocale(idioma) }),
+    formatoLargo: (fecha, idioma) => format(fecha, 'PPP', { locale: obtenerLocale(idioma) }),
+    formatoCompleto: (fecha, idioma) => format(fecha, 'PPPp', { locale: obtenerLocale(idioma) })
+};
+
+// Uso del sistema
+const ahora = new Date();
+console.log(sistemaFechas.formatoCorto(ahora, 'es'));    // "23/10/2024"
+console.log(sistemaFechas.formatoLargo(ahora, 'fr'));    // "23 octobre 2024"
+console.log(sistemaFechas.formatoCompleto(ahora, 'de')); // "23. Oktober 2024 um 14:30"</code></pre>
+                    </div>
+                </section>
+
+                <!-- Date-fns: Operaciones -->
+                <section>
+                    <h2><i class="fa-solid fa-calculator"></i> Operaciones con fechas</h2>
+                    <div class="side-by-side">
+                        <div class="concept-card">
+                            <h3>Sumar y restar tiempo</h3>
+<pre><code class="language-javascript">const hoy = new Date();
+
+// Sumar tiempo
+const enUnaSemana = addDays(hoy, 7);
+const enUnMes = addMonths(hoy, 1);
+const enUnAño = addYears(hoy, 1);
+const enDosHoras = addHours(hoy, 2);
+
+// Restar tiempo
+const haceUnaSemana = subDays(hoy, 7);
+const haceUnMes = subMonths(hoy, 1);
+const haceUnAño = subYears(hoy, 1);
+
+// Ejemplo: calcular fecha de vencimiento
+const fechaCompra = new Date();
+const fechaVencimiento = addDays(fechaCompra, 30);
+console.log(`Vence el: ${format(fechaVencimiento, 'dd/MM/yyyy')}`);</code></pre>
+                        </div>
+                        <div class="concept-card">
+                            <h3>Comparaciones de fechas</h3>
+<pre><code class="language-javascript">const hoy = new Date();
+const fechaLimite = new Date('2024-12-31');
+const fechaPasada = new Date('2024-01-01');
+
+// Comparaciones básicas
+const yaVencio = isAfter(hoy, fechaLimite);     // false
+const esAnterior = isBefore(hoy, fechaLimite);  // true
+const esMismaFecha = isSameDay(hoy, fechaLimite); // false
+
+// Comparaciones por período
+const esMismoMes = isSameMonth(hoy, fechaPasada);
+const esMismoAño = isSameYear(hoy, fechaPasada);
+
+// Ejemplo: validar si una fecha está en rango
+const estaEnRango = (fecha, inicio, fin) => {
+    return isAfter(fecha, inicio) && isBefore(fecha, fin);
+};</code></pre>
+                        </div>
+                    </div>
+                    <div class="concept-card" style="margin-top: 1em;">
+                        <h3>Cálculo de diferencias y ejemplos prácticos</h3>
+<pre><code class="language-javascript">const hoy = new Date();
+const fechaNacimiento = new Date('1995-05-15');
+const fechaLimite = new Date('2024-12-31');
+
+// Diferencias en diferentes unidades
+const diasRestantes = differenceInDays(fechaLimite, hoy);
+const semanasRestantes = differenceInWeeks(fechaLimite, hoy);
+const mesesRestantes = differenceInMonths(fechaLimite, hoy);
+
+// Calcular edad exacta
+const edad = differenceInYears(hoy, fechaNacimiento);
+const diasVividos = differenceInDays(hoy, fechaNacimiento);
+
+console.log(`Tienes ${edad} años (${diasVividos} días vividos)`);
+console.log(`Quedan ${diasRestantes} días para fin de año`);
+
+// Ejemplo práctico: sistema de suscripciones
+const calcularEstadoSuscripcion = (fechaInicio, duracionMeses) => {
+    const fechaVencimiento = addMonths(fechaInicio, duracionMeses);
+    const diasRestantes = differenceInDays(fechaVencimiento, new Date());
+    
+    if (diasRestantes < 0) {
+        return { estado: 'vencida', diasVencida: Math.abs(diasRestantes) };
+    } else if (diasRestantes <= 7) {
+        return { estado: 'por_vencer', diasRestantes };
+    } else {
+        return { estado: 'activa', diasRestantes };
+    }
+};
+
+// Ejemplo: calcular tiempo trabajado
+const calcularTiempoTrabajado = (fechaIngreso) => {
+    const años = differenceInYears(new Date(), fechaIngreso);
+    const meses = differenceInMonths(new Date(), fechaIngreso) % 12;
+    
+    return `${años} años y ${meses} meses de experiencia`;
+};</code></pre>
+                    </div>
+                </section>
+
+                <!-- Axios -->
+                <section>
+                    <h2><i class="fa-solid fa-globe"></i> Axios: Peticiones HTTP</h2>
+                    <div style="text-align: center; margin: 1.5em 0;">
+                        <div style="background: rgba(46, 204, 113, 0.1); padding: 1.5em; border-radius: 10px;">
+                            <p style="font-size: 1.1em;">
+                                Cliente HTTP basado en promesas para navegador y Node.js
+                            </p>
+                        </div>
+                    </div>
+                    <div class="side-by-side">
+                        <div class="concept-card">
+                            <h3>Instalación y configuración</h3>
+<pre><code class="language-bash"># Instalar
+npm install axios</code></pre>
+<pre><code class="language-javascript">import axios from 'axios';
+
+// Configuración base
+const api = axios.create({
+    baseURL: 'https://api.miapp.com',
+    timeout: 5000,
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer token123'
+    }
+});</code></pre>
+                        </div>
+                        <div class="concept-card">
+                            <h3>Peticiones GET</h3>
+<pre><code class="language-javascript">// GET simple
+const response = await axios.get('/users');
+const usuarios = response.data;
+
+// GET con parámetros
+const response = await axios.get('/users', {
+    params: {
+        page: 1,
+        limit: 10,
+        role: 'admin'
+    }
+});
+
+// GET con manejo de errores
+try {
+    const response = await axios.get('/users/123');
+    console.log('Usuario:', response.data);
+} catch (error) {
+    console.error('Error:', error.response.status);
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="concept-card" style="margin-top: 1em;">
+                        <h3>Peticiones POST, PUT, DELETE</h3>
+<pre><code class="language-javascript">// POST - Crear usuario
+const nuevoUsuario = {
+    nombre: 'Ana García',
+    email: 'ana@email.com',
+    role: 'user'
+};
+
+const response = await axios.post('/users', nuevoUsuario);
+console.log('Usuario creado:', response.data);
+
+// PUT - Actualizar usuario
+const datosActualizados = { nombre: 'Ana María García' };
+await axios.put('/users/123', datosActualizados);
+
+// DELETE - Eliminar usuario
+await axios.delete('/users/123');
+
+// Ejemplo práctico: sistema de login
+const login = async (email, password) => {
+    try {
+        const response = await axios.post('/auth/login', {
+            email,
+            password
+        });
+        
+        // Guardar token
+        localStorage.setItem('token', response.data.token);
+        return response.data.user;
+    } catch (error) {
+        throw new Error('Credenciales inválidas');
+    }
+};</code></pre>
+                    </div>
+                </section>
+
+                <!-- Lodash -->
+                <section>
+                    <h2><i class="fa-solid fa-tools"></i> Lodash: Utilidades para arrays/objetos</h2>
+                    <div style="text-align: center; margin: 1.5em 0;">
+                        <div style="background: rgba(230, 126, 34, 0.1); padding: 1.5em; border-radius: 10px;">
+                            <p style="font-size: 1.1em;">
+                                Biblioteca de utilidades que facilita el trabajo con arrays, objetos y funciones
+                            </p>
+                        </div>
+                    </div>
+                    <div class="side-by-side">
+                        <div class="concept-card">
+                            <h3>Instalación y uso</h3>
+<pre><code class="language-bash"># Instalar
+npm install lodash</code></pre>
+<pre><code class="language-javascript">// Importar toda la biblioteca
+import _ from 'lodash';
+
+// O importar funciones específicas
+import { 
+    uniq, 
+    groupBy, 
+    debounce, 
+    cloneDeep 
+} from 'lodash';</code></pre>
+                        </div>
+                        <div class="concept-card">
+                            <h3>Utilidades para arrays</h3>
+<pre><code class="language-javascript">const numeros = [1, 2, 2, 3, 3, 4];
+const usuarios = [
+    { id: 1, nombre: 'Ana', edad: 25 },
+    { id: 2, nombre: 'Luis', edad: 30 },
+    { id: 3, nombre: 'María', edad: 25 }
+];
+
+// Eliminar duplicados
+_.uniq(numeros);                    // [1, 2, 3, 4]
+
+// Agrupar por propiedad
+_.groupBy(usuarios, 'edad');        
+// { 25: [Ana, María], 30: [Luis] }
+
+// Encontrar por propiedad
+_.find(usuarios, { nombre: 'Ana' }); // { id: 1, ... }</code></pre>
+                        </div>
+                    </div>
+                    <div class="concept-card" style="margin-top: 1em;">
+                        <h3>Utilidades avanzadas</h3>
+<pre><code class="language-javascript">// Clonar objetos profundamente
+const original = { usuario: { nombre: 'Ana', config: { tema: 'dark' } } };
+const copia = _.cloneDeep(original);
+copia.usuario.nombre = 'Luis'; // No afecta al original
+
+// Debounce - retrasar ejecución
+const buscar = _.debounce((termino) => {
+    console.log(`Buscando: ${termino}`);
+    // Hacer petición a API
+}, 300);
+
+// Throttle - limitar frecuencia
+const guardarProgreso = _.throttle(() => {
+    console.log('Guardando progreso...');
+}, 1000);
+
+// Ejemplo práctico: procesar datos de ventas
+const ventas = [
+    { vendedor: 'Ana', mes: 'enero', total: 1200 },
+    { vendedor: 'Luis', mes: 'enero', total: 800 },
+    { vendedor: 'Ana', mes: 'febrero', total: 1500 }
+];
+
+// Agrupar por vendedor y sumar totales
+const ventasPorVendedor = _.mapValues(
+    _.groupBy(ventas, 'vendedor'),
+    (ventasVendedor) => _.sumBy(ventasVendedor, 'total')
+);
+// { Ana: 2700, Luis: 800 }</code></pre>
+                    </div>
+                </section>
+
+                <!-- Chart.js -->
+                <section>
+                    <h2><i class="fa-solid fa-chart-bar"></i> Chart.js: Creación de gráficos</h2>
+                    <div style="text-align: center; margin: 1.5em 0;">
+                        <div style="background: rgba(231, 76, 60, 0.1); padding: 1.5em; border-radius: 10px;">
+                            <p style="font-size: 1.1em;">
+                                Biblioteca para crear gráficos interactivos y responsivos en HTML5 Canvas
+                            </p>
+                        </div>
+                    </div>
+                    <div class="side-by-side">
+                        <div class="concept-card">
+                            <h3>Instalación y setup</h3>
+<pre><code class="language-bash"># Instalar
+npm install chart.js</code></pre>
+<pre><code class="language-html"><!-- HTML -->
+&lt;canvas id="miGrafico" width="400" height="200"&gt;&lt;/canvas&gt;</code></pre>
+<pre><code class="language-javascript">import Chart from 'chart.js/auto';
+
+// Obtener contexto del canvas
+const ctx = document.getElementById('miGrafico').getContext('2d');</code></pre>
+                        </div>
+                        <div class="concept-card">
+                            <h3>Gráfico de barras básico</h3>
+<pre><code class="language-javascript">const ventasPorMes = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Enero', 'Febrero', 'Marzo', 'Abril'],
+        datasets: [{
+            label: 'Ventas ($)',
+            data: [12000, 15000, 8000, 18000],
+            backgroundColor: [
+                'rgba(54, 162, 235, 0.8)',
+                'rgba(255, 99, 132, 0.8)',
+                'rgba(255, 205, 86, 0.8)',
+                'rgba(75, 192, 192, 0.8)'
+            ]
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});</code></pre>
+                        </div>
+                    </div>
+                    <div class="concept-card" style="margin-top: 1em;">
+                        <h3>Gráficos avanzados</h3>
+<pre><code class="language-javascript">// Gráfico de líneas con múltiples datasets
+const rendimientoAnual = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+        datasets: [
+            {
+                label: 'Ventas 2023',
+                data: [45000, 52000, 48000, 61000],
+                borderColor: 'rgb(75, 192, 192)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                tension: 0.4
+            },
+            {
+                label: 'Ventas 2024',
+                data: [48000, 55000, 53000, 67000],
+                borderColor: 'rgb(255, 99, 132)',
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                tension: 0.4
+            }
+        ]
+    },
+    options: {
+        responsive: true,
+        interaction: {
+            intersect: false,
+        },
+        plugins: {
+            title: {
+                display: true,
+                text: 'Comparación de Ventas Anuales'
+            }
+        }
+    }
+});
+
+// Actualizar datos dinámicamente
+const actualizarGrafico = (nuevosdatos) => {
+    rendimientoAnual.data.datasets[0].data = nuevosdatos;
+    rendimientoAnual.update();
+};</code></pre>
+                    </div>
+                </section>
+
+                <!-- Creadas por ti -->
+                <section>
+                    <h2><i class="fa-solid fa-user"></i> Funciones creadas por ti</h2>
+                    <div style="text-align: center; margin: 2em 0;">
+                        <div style="background: rgba(46, 204, 113, 0.1); padding: 2em; border-radius: 15px; border: 2px solid #2ecc71;">
+                            <h3 style="color: #2ecc71; margin-bottom: 1em;">Custom Functions</h3>
+                            <p style="font-size: 1.1em;">
+                                Funciones que tú escribes para resolver problemas específicos de tu aplicación
+                            </p>
+                        </div>
+                    </div>
+                    <div class="concept-grid">
+                        <div class="concept-card">
+                            <h3><i class="fa-solid fa-percentage"></i> Cálculos de negocio</h3>
+<pre><code class="language-javascript">function calcularDescuento(precio, porcentaje) {
+    return precio * (porcentaje / 100);
+}
+
+function calcularIVA(subtotal) {
+    return subtotal * 0.12;
+}
+
+function precioFinal(precio, descuento) {
+    const conDescuento = precio - calcularDescuento(precio, descuento);
+    return conDescuento + calcularIVA(conDescuento);
+}</code></pre>
+                        </div>
+                        <div class="concept-card">
+                            <h3><i class="fa-solid fa-shield-alt"></i> Validaciones</h3>
+<pre><code class="language-javascript">function validarEmail(email) {
+    return email.includes('@') && email.includes('.');
+}
+
+function validarPassword(password) {
+    return password.length >= 8 && 
+           /[A-Z]/.test(password) && 
+           /[0-9]/.test(password);
+}
+
+function validarUsuario(usuario) {
+    return validarEmail(usuario.email) && 
+           validarPassword(usuario.password);
+}</code></pre>
+                        </div>
+                        <div class="concept-card">
+                            <h3><i class="fa-solid fa-magic"></i> Transformaciones</h3>
+<pre><code class="language-javascript">function formatearNombre(nombre) {
+    return nombre.trim()
+                 .toLowerCase()
+                 .split(' ')
+                 .map(palabra => 
+                     palabra.charAt(0).toUpperCase() + 
+                     palabra.slice(1)
+                 )
+                 .join(' ');
+}
+
+// "  juan PÉREZ  " → "Juan Pérez"</code></pre>
+                        </div>
+                        <div class="concept-card">
+                            <h3><i class="fa-solid fa-filter"></i> Filtros y búsquedas</h3>
+<pre><code class="language-javascript">function buscarProductos(productos, termino) {
+    return productos.filter(producto => 
+        producto.nombre.toLowerCase()
+                .includes(termino.toLowerCase())
+    );
+}
+
+function productosEnStock(productos) {
+    return productos.filter(p => p.stock > 0);
+}
+
+function ordenarPorPrecio(productos, ascendente = true) {
+    return [...productos].sort((a, b) => 
+        ascendente ? a.precio - b.precio : b.precio - a.precio
+    );
+}</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sintaxis JavaScript -->
+                <section>
+                    <h2><i class="fa-solid fa-code"></i> Sintaxis JavaScript</h2>
+                    <div class="side-by-side">
+                        <div class="concept-card">
+                            <h3>Función básica</h3>
+<pre><code class="language-javascript">function saludar(nombre) {
+    return `Hola ${nombre}`;
+}
+
+// Uso
+const mensaje = saludar("Ana");
+console.log(mensaje); // "Hola Ana"</code></pre>
+                        </div>
+                        <div class="concept-card">
+                            <h3>Función flecha</h3>
+<pre><code class="language-javascript">const saludar = (nombre) => {
+    return `Hola ${nombre}`;
+};
+
+// Versión corta
+const saludar = (nombre) => `Hola ${nombre}`;</code></pre>
+                        </div>
+                    </div>
+                    <div class="example-note">
+                        <strong>Palabra clave <code>return</code>:</strong> Especifica qué valor devuelve la función al terminar su ejecución.
+                    </div>
+                    <div style="text-align: center; margin-top: 2em;">
+<pre><code class="language-javascript" style="font-size: 1.1em;">// Ejemplo visual del flujo
+function duplicar(numero) {
+    const resultado = numero * 2;  // Procesamiento
+    return resultado;              // ← Esto es lo que "sale" de la función
+}
+
+const valor = duplicar(5);  // valor = 10</code></pre>
+                    </div>
+                </section>
+
+                <!-- Efectos -->
+                <section>
+                    <h2><i class="fa-solid fa-diagram-project"></i> Efectos secundarios</h2>
+                    <div class="info-card">
+                        <strong>Diferencia clave:</strong> Las funciones en programación pueden hacer más que solo calcular valores
+                    </div>
+                    <div class="side-by-side" style="margin-top: 1.5em;">
+                        <div class="concept-card">
+                            <h3><i class="fa-solid fa-calculator"></i> Función matemática</h3>
+<pre><code class="language-javascript">// Solo calcula, no hace nada más
+f(x) = x²
+
+// En JavaScript
+const cuadrado = (x) => x * x;</code></pre>
+                            <p>Siempre da el mismo resultado para la misma entrada</p>
+                        </div>
+                        <div class="concept-card">
+                            <h3><i class="fa-solid fa-bolt"></i> Función con efectos</h3>
+<pre><code class="language-javascript">function guardarUsuario(usuario) {
+    console.log("Guardando...");     // ← Efecto: imprimir
+    database.save(usuario);          // ← Efecto: escribir BD
+    enviarEmail(usuario.email);      // ← Efecto: enviar email
+    return usuario.id;
+}</code></pre>
+                            <p>Además de calcular, modifica el "mundo exterior"</p>
+                        </div>
+                    </div>
+                    <div class="concept-grid" style="margin-top: 1.5em;">
+                        <div class="concept-card">
+                            <h3>Ejemplos de efectos</h3>
+                            <ul>
+                                <li><i class="fa-solid fa-print"></i> Imprimir en consola</li>
+                                <li><i class="fa-solid fa-database"></i> Escribir en base de datos</li>
+                                <li><i class="fa-solid fa-file"></i> Crear/modificar archivos</li>
+                                <li><i class="fa-solid fa-globe"></i> Hacer peticiones HTTP</li>
+                                <li><i class="fa-solid fa-edit"></i> Cambiar variables globales</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Anatomía de una función -->
+                <section>
+                    <h2>Anatomía de una función en JavaScript</h2>
+                    <div style="text-align: center; margin: 2em 0;">
+<pre><code class="language-javascript" style="font-size: 1.2em;">function calcularArea(radio) {
+    const pi = 3.14159;
+    return pi * radio * radio;
+}</code></pre>
+                    </div>
+                    <div class="concept-grid">
+                        <div class="concept-card">
+                            <h3><i class="fa-solid fa-tag"></i> Nombre</h3>
+                            <p><code>calcularArea</code> - Identifica la función para poder invocarla</p>
+                        </div>
+                        <div class="concept-card">
+                            <h3><i class="fa-solid fa-arrow-right"></i> Parámetros</h3>
+                            <p><code>radio</code> - Datos de entrada que la función necesita</p>
+                        </div>
+                        <div class="concept-card">
+                            <h3><i class="fa-solid fa-cogs"></i> Cuerpo</h3>
+                            <p>Lógica interna que procesa los parámetros</p>
+                        </div>
+                        <div class="concept-card">
+                            <h3><i class="fa-solid fa-reply"></i> Retorno</h3>
+                            <p><code>return</code> - Valor que la función devuelve al terminar</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Formas de declarar funciones -->
+                <section>
+                    <h2>Formas de declarar funciones en JavaScript</h2>
+                    <div class="side-by-side">
+                        <div class="concept-card">
+                            <h3><i class="fa-solid fa-hammer"></i> Declaración tradicional</h3>
+<pre><code class="language-javascript">function sumar(a, b) {
+    return a + b;
+}</code></pre>
+                            <p>Se puede llamar antes de ser declarada (hoisting)</p>
+                        </div>
+                        <div class="concept-card">
+                            <h3><i class="fa-solid fa-equals"></i> Expresión de función</h3>
+<pre><code class="language-javascript">const sumar = function(a, b) {
+    return a + b;
+};</code></pre>
+                            <p>Se debe declarar antes de usarla</p>
+                        </div>
+                    </div>
+                    <div class="concept-card" style="margin-top: 1em;">
+                        <h3><i class="fa-solid fa-arrow-right"></i> Función flecha (Arrow Function)</h3>
+<pre><code class="language-javascript">const sumar = (a, b) => a + b;
+
+// Versión más explícita
+const sumar = (a, b) => {
+    return a + b;
+};</code></pre>
+                        <p>Sintaxis más concisa, ideal para programación funcional</p>
+                    </div>
+                </section>
+
+                <!-- Ejemplo visual: Función como máquina -->
+                <section>
+                    <h2>Función como máquina transformadora</h2>
+                    <div style="text-align: center; margin: 2em 0;">
+                        <div style="display: inline-block; background: rgba(0,63,114,0.1); padding: 2em; border-radius: 15px; border: 2px solid var(--uide-primary);">
+                            <div style="margin-bottom: 1em;">
+                                <span style="background: #e74c3c; color: white; padding: 0.5em 1em; border-radius: 5px; margin-right: 1em;">Entrada: 5</span>
+                                <i class="fa-solid fa-arrow-right" style="font-size: 1.5em; color: var(--uide-primary);"></i>
+                            </div>
+                            <div style="background: var(--uide-primary); color: white; padding: 1em; border-radius: 10px; margin: 1em 0;">
+                                <strong>duplicar(x)</strong><br>
+                                <code>x * 2</code>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-arrow-right" style="font-size: 1.5em; color: var(--uide-primary);"></i>
+                                <span style="background: #27ae60; color: white; padding: 0.5em 1em; border-radius: 5px; margin-left: 1em;">Salida: 10</span>
+                            </div>
+                        </div>
+                    </div>
+<pre><code class="language-javascript">const duplicar = (x) => x * 2;
+console.log(duplicar(5)); // 10</code></pre>
+                </section>
+
+                <!-- Funciones vs métodos -->
+                <section>
+                    <h2>Función vs. método en JavaScript</h2>
+                    <div class="side-by-side">
+                        <div class="concept-card">
+                            <h3><i class="fa-solid fa-cube"></i> Función independiente</h3>
+<pre><code class="language-javascript">// Función pura
+const calcularDescuento = (precio, porcentaje) => {
+    return precio * (porcentaje / 100);
+};
+
+// Uso
+const descuento = calcularDescuento(100, 15);
+console.log(descuento); // 15</code></pre>
+                            <p>No depende de ningún objeto o contexto externo</p>
+                        </div>
+                        <div class="concept-card">
+                            <h3><i class="fa-solid fa-cubes"></i> Método de objeto</h3>
+<pre><code class="language-javascript">// Método asociado a un objeto
+const producto = {
+    precio: 100,
+    descuento: 15,
+    calcularPrecioFinal() {
+        return this.precio - (this.precio * this.descuento / 100);
+    }
+};
+
+console.log(producto.calcularPrecioFinal()); // 85</code></pre>
+                            <p>Accede y modifica el estado del objeto</p>
+                        </div>
+                    </div>
+                    <div class="example-note">
+                        En PF preferimos funciones independientes porque son más fáciles de probar y reutilizar.
+                    </div>
+                </section>
+
+                <!-- Ejemplo práctico: Pipeline de transformaciones -->
+                <section>
+                    <h2>Pipeline de transformaciones</h2>
+                    <div class="info-card">
+                        <strong>Escenario:</strong> Procesar una lista de productos para mostrar solo los disponibles con descuento
+                    </div>
+<pre><code class="language-javascript">const productos = [
+    { nombre: "Laptop", precio: 1000, stock: 5, categoria: "tech" },
+    { nombre: "Mouse", precio: 25, stock: 0, categoria: "tech" },
+    { nombre: "Libro", precio: 15, stock: 10, categoria: "educacion" }
+];
+
+// Funciones puras para cada transformación
+const estaDisponible = (producto) => producto.stock > 0;
+const aplicarDescuento = (producto) => ({
+    ...producto,
+    precioConDescuento: producto.precio * 0.9
+});
+const formatearParaMostrar = (producto) => 
+    `${producto.nombre}: $${producto.precioConDescuento.toFixed(2)}`;
+
+// Pipeline funcional
+const productosEnOferta = productos
+    .filter(estaDisponible)
+    .map(aplicarDescuento)
+    .map(formatearParaMostrar);
+
+console.log(productosEnOferta);
+// ["Laptop: $900.00", "Libro: $13.50"]</code></pre>
+                </section>
+
+                <!-- Ventajas de las funciones -->
+                <section>
+                    <h2>¿Por qué usar funciones?</h2>
+                    <div class="concept-grid">
+                        <div class="concept-card">
+                            <h3><i class="fa-solid fa-recycle"></i> Reutilización</h3>
+<pre><code class="language-javascript">const calcularIVA = (precio) => precio * 0.12;
+
+// Reutilizable en múltiples contextos
+const precioProducto = calcularIVA(100);
+const precioServicio = calcularIVA(250);</code></pre>
+                        </div>
+                        <div class="concept-card">
+                            <h3><i class="fa-solid fa-puzzle-piece"></i> Modularidad</h3>
+<pre><code class="language-javascript">const validarEmail = (email) => 
+    email.includes('@') && email.includes('.');
+
+const validarPassword = (password) => 
+    password.length >= 8;
+
+const validarUsuario = (usuario) => 
+    validarEmail(usuario.email) && 
+    validarPassword(usuario.password);</code></pre>
+                        </div>
+                        <div class="concept-card">
+                            <h3><i class="fa-solid fa-bug"></i> Facilidad de pruebas</h3>
+<pre><code class="language-javascript">// Función pura = fácil de probar
+const multiplicar = (a, b) => a * b;
+
+// Test simple
+console.assert(multiplicar(3, 4) === 12);
+console.assert(multiplicar(0, 5) === 0);</code></pre>
+                        </div>
+                        <div class="concept-card">
+                            <h3><i class="fa-solid fa-eye"></i> Legibilidad</h3>
+<pre><code class="language-javascript">// En lugar de código repetitivo...
+const procesarDatos = (datos) => 
+    datos
+        .filter(esValido)
+        .map(normalizar)
+        .sort(ordenarPorFecha);</code></pre>
+                        </div>
+                    </div>
+                </section>
             </section>
 
             <!-- Funciones puras -->
             <section>
-                <h2>2. Funciones puras</h2>
-                <div class="concept-grid">
-                    <div class="concept-card">
-                        <h3><i class="fa-solid fa-bullseye"></i> Determinismo</h3>
-                        <p>Iguales entradas, iguales salidas. Facilita depuración y pruebas.</p>
+                <section>
+                    <h2>2. Funciones puras</h2>
+                    <div class="concept-grid">
+                        <div class="concept-card">
+                            <h3><i class="fa-solid fa-bullseye"></i> Determinismo</h3>
+                            <p>Iguales entradas, iguales salidas. Facilita depuración y pruebas.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h3><i class="fa-solid fa-ban"></i> Sin efectos secundarios</h3>
+                            <p>No modifica datos externos ni depende de ellos. Trabaja con parámetros y valores
+                                retornados.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h3><i class="fa-solid fa-layer-group"></i> Composición</h3>
+                            <p>Funciona como bloques LEGO: se pueden encadenar para producir transformaciones
+                                complejas.</p>
+                        </div>
                     </div>
-                    <div class="concept-card">
-                        <h3><i class="fa-solid fa-ban"></i> Sin efectos secundarios</h3>
-                        <p>No modifica datos externos ni depende de ellos. Trabaja con parámetros y valores
-                            retornados.</p>
+                    <div class="example-note">
+                        Relación directa con la inmutabilidad: se evitan datos cambiantes para mantener la pureza.
                     </div>
-                    <div class="concept-card">
-                        <h3><i class="fa-solid fa-layer-group"></i> Composición</h3>
-                        <p>Funciona como bloques LEGO: se pueden encadenar para producir transformaciones
-                            complejas.</p>
+                </section>
+                <section>
+                    <h3>Pureza en código</h3>
+                    <div class="code-card">
+<pre><code class="language-javascript">// Función pura
+const aplicarDescuento = (precio, porcentaje) => precio * (1 - porcentaje);
+
+// Función impura
+let totalCarrito = 0;
+const agregarAlCarrito = (precio) => {
+  totalCarrito += precio; // muta estado externo
+  return totalCarrito;
+};</code></pre>
                     </div>
-                </div>
-                <div class="example-note">
-                    Relación directa con la inmutabilidad: se evitan datos cambiantes para mantener la pureza.
-                </div>
+                    <p>La pureza depende de no leer ni mutar estados externos y de usar datos inmutables.</p>
+                </section>
+                <section>
+                    <h3>Checklist rápido</h3>
+                    <ul>
+                        <li>¿Depende solo de sus argumentos?</li>
+                        <li>¿Evita modificar estructuras existentes y usa copias?</li>
+                        <li>¿Retorna siempre el mismo valor para la misma entrada?</li>
+                    </ul>
+                    <div class="example-note">
+                        Cuando la respuesta es “no”, encapsula la parte con efectos en otra función y deja este núcleo puro.
+                    </div>
+                </section>
             </section>
 
             <!-- Primeros pasos PF -->
             <section>
-                <h2>3. Primeros pasos en PF</h2>
-                <div class="concept-grid">
-                    <div class="concept-card">
-                        <h3><i class="fa-solid fa-person-walking"></i> Ciudadanas de primera clase</h3>
-                        <p>Las funciones se almacenan en variables, se envían como argumentos y se retornan.</p>
-                    </div>
-                    <div class="concept-card">
-                        <h3><i class="fa-solid fa-repeat"></i> Recursión</h3>
+                <section>
+                    <h2>3. Primeros pasos en PF</h2>
+                    <div class="concept-grid">
+                        <div class="concept-card">
+                            <h3><i class="fa-solid fa-person-walking"></i> Ciudadanas de primera clase</h3>
+                            <p>Las funciones se almacenan en variables, se envían como argumentos y se retornan.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h3><i class="fa-solid fa-repeat"></i> Recursión</h3>
 <pre><code class="language-fsharp">let rec fib n =
     if n < 2 then 1
     else fib (n-1) + fib (n-2)</code></pre>
-                    </div>
-                    <div class="concept-card">
-                        <h3><i class="fa-solid fa-link"></i> Currificación</h3>
+                        </div>
+                        <div class="concept-card">
+                            <h3><i class="fa-solid fa-link"></i> Currificación</h3>
 <pre><code class="language-javascript">const sumar = (a) => (b) => a + b;
 const sumarTres = sumar(3);</code></pre>
-                        <p>Permite crear funciones especializadas al parcializar argumentos.</p>
+                            <p>Permite crear funciones especializadas al parcializar argumentos.</p>
+                        </div>
                     </div>
-                </div>
+                </section>
+                <section>
+                    <h3>Recursión controlada</h3>
+                    <div class="info-card">
+                        <strong>Clave:</strong> Define caso base claro y evita recursión infinita; usa memoización cuando el problema se vuelve exponencial.
+                    </div>
+<pre><code class="language-javascript">const fibonacci = (n, cache = {}) => {
+  if (n < 2) return 1;
+  if (cache[n]) return cache[n];
+  cache[n] = fibonacci(n - 1, cache) + fibonacci(n - 2, cache);
+  return cache[n];
+};</code></pre>
+                    <p class="example-note">Este patrón contrasta la elegancia declarativa con la necesidad de controlar recursos.</p>
+                </section>
+                <section>
+                    <h3>Currificación aplicada</h3>
+<pre><code class="language-javascript">const aplicarImpuesto = (tasa) => (valor) => valor * (1 + tasa);
+const aplicarIVA = aplicarImpuesto(0.12);
+const aplicarIVAPreferencial = aplicarImpuesto(0.08);
+
+console.log(aplicarIVA(100)); // 112
+console.log(aplicarIVAPreferencial(100)); // 108</code></pre>
+                    <p>Transforma una función general en versiones especializadas sin duplicar lógica.</p>
+                </section>
+            </section>
+
+            <!-- Expresiones lambda -->
+            <section>
+                <section>
+                    <h2>Expresiones lambda</h2>
+                    <div class="concept-grid">
+                        <div class="concept-card">
+                            <h3><i class="fa-solid fa-bolt"></i> Funciones anónimas</h3>
+                            <p>Bloques sin nombre que actúan como valores; ideales para pasar como argumentos a
+                                funciones de orden superior.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h3><i class="fa-solid fa-diagram-project"></i> Composición fluida</h3>
+                            <p>Permiten construir pipelines declarativos y expresar transformaciones puntuales sin
+                                crear funciones auxiliares explícitas.</p>
+                        </div>
+                    </div>
+                    <div class="example-note">
+                        Sintaxis típica en JavaScript/F#: <code>(param) => expresión</code> · <code>fun x -> expresión</code>.
+                    </div>
+                </section>
+                <section>
+                    <h3>Transformaciones rápidas</h3>
+                    <div class="code-card">
+<pre><code class="language-javascript">const potenciasDeDos = Array.from({ length: 5 }, (_, x) => 2 ** x);
+console.log(potenciasDeDos); // [1, 2, 4, 8, 16]</code></pre>
+                    </div>
+                    <p>Elimina la necesidad de nombrar funciones auxiliares cuando la lógica es breve y específica.</p>
+                </section>
+                <section>
+                    <h3>Composición con lambdas</h3>
+                    <div class="code-card">
+<pre><code class="language-javascript">const normalizar = (texto) => texto.trim().toLowerCase();
+const capitalizar = (texto) => texto[0].toUpperCase() + texto.slice(1);
+
+const limpiarNombre = (nombre) => capitalizar(normalizar(nombre));
+console.log(limpiarNombre("  lambda lovers "));</code></pre>
+                    </div>
+                    <p>Las lambdas sirven como piezas que se combinan para expresar reglas de negocio sin mutar datos.</p>
+                </section>
             </section>
 
             <!-- Ejercicios -->
             <section>
-                <h2>4. Ejercicios guiados</h2>
-                <div class="side-by-side">
-                    <div>
-                        <h3>Refactorizar suma de pares</h3>
-                        <ol>
-                            <li>Analiza la versión imperativa con bucles y estados mutables.</li>
-                            <li>Identifica patrones de filtrado y acumulación.</li>
-                            <li>Cámbialos por <code>filter</code> y <code>reduce</code> (o
-                                <code>foldl</code> en Haskell).</li>
-                        </ol>
+                <section>
+                    <h2>4. Ejercicios guiados</h2>
+                    <div class="side-by-side">
+                        <div>
+                            <h3>Refactorizar suma de pares</h3>
+                            <ol>
+                                <li>Analiza la versión imperativa con bucles y estados mutables.</li>
+                                <li>Identifica patrones de filtrado y acumulación.</li>
+                                <li>Sustituye con <code>filter</code> y <code>reduce</code> (o
+                                    <code>foldl</code> en Haskell).</li>
+                            </ol>
+                        </div>
+                        <div>
+                            <h3>Lambdas con <code>map</code></h3>
+                            <p>Construye una lista de potencias: <code>map(lambda x: 2 ** x, lista)</code>.</p>
+                            <p>Experimenta normalizando cadenas: <code>lambda texto: texto.strip().title()</code>.</p>
+                        </div>
                     </div>
-                    <div>
-                        <h3>Lambdas con <code>map</code></h3>
-                        <p>Construye una lista de potencias: <code>map(lambda x: 2 ** x, lista)</code>.</p>
-                        <p>Experimenta con normalizar cadenas: <code>lambda texto: texto.strip().title()</code>.</p>
+                    <div class="example-note">
+                        Documenta las decisiones: ¿cuándo aceptas un efecto secundario? ¿cómo aislas la mutación?
                     </div>
-                </div>
-                <div class="example-note">
-                    Documenta las decisiones: ¿cuándo aceptas un efecto secundario? ¿cómo aislas la mutación?
-                </div>
+                </section>
+                <section>
+                    <h3>Imperativo vs. declarativo</h3>
+                    <div class="code-card">
+<pre><code class="language-javascript">function sumarParesImperativo(lista) {
+  let total = 0;
+  for (let i = 0; i < lista.length; i++) {
+    if (lista[i] % 2 === 0) {
+      total += lista[i];
+    }
+  }
+  return total;
+}
+
+const sumarParesFuncional = (lista) =>
+  lista.filter((n) => n % 2 === 0).reduce((acc, n) => acc + n, 0);</code></pre>
+                    </div>
+                    <p>Enfócate en describir el “qué” y deja que las funciones de orden superior manejen el “cómo”.</p>
+                </section>
+                <section>
+                    <h3>Pipelines declarativos</h3>
+                    <div class="code-card">
+<pre><code class="language-javascript">const ventas = [
+  { vendedor: "Ana", total: 1200, estado: "cerrado" },
+  { vendedor: "Luis", total: 400, estado: "abierto" },
+  { vendedor: "Ana", total: 800, estado: "cerrado" },
+  { vendedor: "María", total: 600, estado: "cerrado" }
+];
+
+const totalCerradoPorVendedor = (nombre) =>
+  ventas
+    .filter((venta) => venta.estado === "cerrado" && venta.vendedor === nombre)
+    .map((venta) => venta.total)
+    .reduce((acc, total) => acc + total, 0);</code></pre>
+                    </div>
+                    <p>Practica ajustando el pipeline para aplicar impuestos, descuentos o métricas adicionales.</p>
+                </section>
             </section>
 
             <!-- Recursos -->
@@ -327,13 +2131,157 @@ const sumarTres = sumar(3);</code></pre>
                 </div>
             </section>
 
+            <!-- Actividades de la semana -->
+            <section>
+                <section data-background="rgba(233, 171, 33, 0.08)">
+                    <h2>Resultado de aprendizaje</h2>
+                    <div class="info-card">
+                        <strong>Objetivo general:</strong> Escribir programas puramente funcionales utilizando recursividad,
+                        pattern matching y funciones de orden superior.
+                    </div>
+                    <p style="margin-top: 1em; font-size: 0.9em;">
+                        Semana 2 · 13 al 19 de octubre de 2025
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Plan de la semana</h2>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.95em;">
+                        <thead>
+                            <tr style="background: rgba(0, 63, 114, 0.08);">
+                                <th style="text-align: left; padding: 0.7em; border: 1px solid rgba(0,63,114,0.2);">
+                                    Tipo de actividad
+                                </th>
+                                <th style="text-align: left; padding: 0.7em; border: 1px solid rgba(0,63,114,0.2);">
+                                    Descripción
+                                </th>
+                                <th style="text-align: center; padding: 0.7em; border: 1px solid rgba(0,63,114,0.2); width: 90px;">
+                                    Horas
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 0.7em; border: 1px solid rgba(0,63,114,0.15);">
+                                    Aprendizaje en contacto con el docente
+                                </td>
+                                <td style="padding: 0.7em; border: 1px solid rgba(0,63,114,0.15);">
+                                    Tutoría: Transformar funciones matemáticas a código, debate activo sobre funciones puras vs. métodos, presentación de funciones anónimas y resolución guiada de problemas.
+                                </td>
+                                <td style="text-align: center; padding: 0.7em; border: 1px solid rgba(0,63,114,0.15);">
+                                    3.0
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.7em; border: 1px solid rgba(0,63,114,0.15);">
+                                    Aprendizaje práctico-experimental
+                                </td>
+                                <td style="padding: 0.7em; border: 1px solid rgba(0,63,114,0.15);">
+                                    Taller Nro. 2: Expresar funciones matemáticas como código.
+                                </td>
+                                <td style="text-align: center; padding: 0.7em; border: 1px solid rgba(0,63,114,0.15);">
+                                    2.0
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.7em; border: 1px solid rgba(0,63,114,0.15);">
+                                    Aprendizaje autónomo
+                                </td>
+                                <td style="padding: 0.7em; border: 1px solid rgba(0,63,114,0.15);">
+                                    Lectura sobre funciones anónimas y resolución de ejercicios del capítulo 2 de la bibliografía básica.
+                                </td>
+                                <td style="text-align: center; padding: 0.7em; border: 1px solid rgba(0,63,114,0.15);">
+                                    4.0
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section>
+                    <h2>Tutoría guiada</h2>
+                    <div class="concept-grid">
+                        <div class="concept-card">
+                            <h3><i class="fa-solid fa-people-arrows"></i> Debate activo</h3>
+                            <ul>
+                                <li>Equipos defienden ventajas de funciones puras vs. métodos.</li>
+                                <li>Discusión sobre efectos secundarios y encapsulamiento.</li>
+                            </ul>
+                        </div>
+                        <div class="concept-card">
+                            <h3><i class="fa-solid fa-book-open"></i> Presentaciones</h3>
+                            <ul>
+                                <li>Comparativa función matemática ↔ función en código.</li>
+                                <li>Demostración de funciones anónimas y tipos de datos.</li>
+                            </ul>
+                        </div>
+                        <div class="concept-card">
+                            <h3><i class="fa-solid fa-lightbulb"></i> Resolución guiada</h3>
+                            <p>Ejercicios que convierten expresiones matemáticas en funciones puras y pipelines con
+                                map/filter/reduce.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Taller Nro. 2</h2>
+                    <div class="info-card">
+                        <strong>Objetivo:</strong> Expresar funciones matemáticas como código declarativo.
+                    </div>
+                    <div class="side-by-side" style="margin-top: 1em;">
+                        <div class="concept-card">
+                            <h3><i class="fa-solid fa-check-double"></i> Entregables</h3>
+                            <ul>
+                                <li>Implementación funcional (sin mutaciones) de ejercicios asignados.</li>
+                                <li>Breve reflexión sobre decisiones de diseño y aislamiento de efectos.</li>
+                            </ul>
+                        </div>
+                        <div class="concept-card">
+                            <h3><i class="fa-solid fa-stopwatch"></i> Estrategia</h3>
+                            <p>Trabaja en parejas, utiliza recursión o funciones de orden superior según convenga,
+                                documenta pruebas unitarias básicas.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Aprendizaje autónomo</h2>
+                    <div class="concept-grid">
+                        <div class="concept-card">
+                            <h3><i class="fa-solid fa-book-reader"></i> Lecturas</h3>
+                            <p>Profundiza en funciones anónimas/lambda, casos de uso y sintaxis en el lenguaje elegido.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h3><i class="fa-solid fa-pencil"></i> Práctica</h3>
+                            <p>Desarrolla los ejercicios del capítulo 2 de la bibliografía básica asegurando pureza y uso de
+                                orden superior.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h3><i class="fa-solid fa-flask"></i> Evidencias</h3>
+                            <p>Registra dudas, hallazgos y ejemplos para compartir en la tutoría siguiente.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section data-background="rgba(0, 63, 114, 0.04)">
+                    <h2>Actividad evaluada</h2>
+                    <div class="info-card">
+                        <strong>Taller Nro. 2:</strong> Expresar funciones matemáticas como código.
+                    </div>
+                    <ul style="margin-top: 1em;">
+                        <li>Evaluación de la correcta traducción a funciones puras y uso de recursión/orden superior.</li>
+                        <li>Se valora la claridad en la explicación del enfoque y la evidencia de pruebas.</li>
+                    </ul>
+                </section>
+            </section>
+
             <!-- Cierre -->
             <section data-transition="convex">
                 <h2>Siguientes pasos</h2>
                 <ul>
-                    <li>Practica funciones puras y lambdas en pequeños scripts.</li>
-                    <li>Investiga cómo manejar efectos secundarios con funciones envolventes.</li>
-                    <li>Prepara preguntas sobre clausuras y callbacks para la próxima semana.</li>
+                    <li>Redacta el entregable del Taller Nro. 2 demostrando traducción de funciones matemáticas a código puro.</li>
+                    <li>Completa la lectura sobre funciones anónimas y registra hallazgos para la tutoría.</li>
+                    <li>Revisa dudas sobre recursión y orden superior para enlazar con clausuras y callbacks de la próxima semana.</li>
                 </ul>
                 <div class="glossary">
                     <strong>Próxima sesión:</strong> clausuras, funciones de orden superior aplicadas y composición.
